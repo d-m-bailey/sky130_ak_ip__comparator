@@ -1,0 +1,161 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1712507479
+<< pwell >>
+rect -628 -767 628 767
+<< mvnmos >>
+rect -400 109 400 509
+rect -400 -509 400 -109
+<< mvndiff >>
+rect -458 497 -400 509
+rect -458 121 -446 497
+rect -412 121 -400 497
+rect -458 109 -400 121
+rect 400 497 458 509
+rect 400 121 412 497
+rect 446 121 458 497
+rect 400 109 458 121
+rect -458 -121 -400 -109
+rect -458 -497 -446 -121
+rect -412 -497 -400 -121
+rect -458 -509 -400 -497
+rect 400 -121 458 -109
+rect 400 -497 412 -121
+rect 446 -497 458 -121
+rect 400 -509 458 -497
+<< mvndiffc >>
+rect -446 121 -412 497
+rect 412 121 446 497
+rect -446 -497 -412 -121
+rect 412 -497 446 -121
+<< mvpsubdiff >>
+rect -592 719 592 731
+rect -592 685 -484 719
+rect 484 685 592 719
+rect -592 673 592 685
+rect -592 623 -534 673
+rect -592 -623 -580 623
+rect -546 -623 -534 623
+rect 534 623 592 673
+rect -592 -673 -534 -623
+rect 534 -623 546 623
+rect 580 -623 592 623
+rect 534 -673 592 -623
+rect -592 -685 592 -673
+rect -592 -719 -484 -685
+rect 484 -719 592 -685
+rect -592 -731 592 -719
+<< mvpsubdiffcont >>
+rect -484 685 484 719
+rect -580 -623 -546 623
+rect 546 -623 580 623
+rect -484 -719 484 -685
+<< poly >>
+rect -362 581 362 597
+rect -362 564 -346 581
+rect -400 547 -346 564
+rect 346 564 362 581
+rect 346 547 400 564
+rect -400 509 400 547
+rect -400 71 400 109
+rect -400 54 -346 71
+rect -362 37 -346 54
+rect 346 54 400 71
+rect 346 37 362 54
+rect -362 21 362 37
+rect -362 -37 362 -21
+rect -362 -54 -346 -37
+rect -400 -71 -346 -54
+rect 346 -54 362 -37
+rect 346 -71 400 -54
+rect -400 -109 400 -71
+rect -400 -547 400 -509
+rect -400 -564 -346 -547
+rect -362 -581 -346 -564
+rect 346 -564 400 -547
+rect 346 -581 362 -564
+rect -362 -597 362 -581
+<< polycont >>
+rect -346 547 346 581
+rect -346 37 346 71
+rect -346 -71 346 -37
+rect -346 -581 346 -547
+<< locali >>
+rect -580 685 -484 719
+rect 484 685 580 719
+rect -580 623 -546 685
+rect 546 623 580 685
+rect -446 497 -412 513
+rect -446 105 -412 121
+rect 412 497 446 513
+rect 412 105 446 121
+rect -446 -121 -412 -105
+rect -446 -513 -412 -497
+rect 412 -121 446 -105
+rect 412 -513 446 -497
+rect -580 -685 -546 -623
+rect 546 -685 580 -623
+rect -580 -719 -484 -685
+rect 484 -719 580 -685
+<< viali >>
+rect -384 547 -346 581
+rect -346 547 346 581
+rect 346 547 384 581
+rect -446 121 -412 497
+rect 412 121 446 497
+rect -384 37 -346 71
+rect -346 37 346 71
+rect 346 37 384 71
+rect -384 -71 -346 -37
+rect -346 -71 346 -37
+rect 346 -71 384 -37
+rect -446 -497 -412 -121
+rect 412 -497 446 -121
+rect 546 -343 580 343
+rect -384 -581 -346 -547
+rect -346 -581 346 -547
+rect 346 -581 384 -547
+<< metal1 >>
+rect -396 581 396 587
+rect -396 547 -384 581
+rect 384 547 396 581
+rect -396 541 396 547
+rect -452 497 -406 509
+rect -452 121 -446 497
+rect -412 121 -406 497
+rect -452 109 -406 121
+rect 406 497 452 509
+rect 406 121 412 497
+rect 446 121 452 497
+rect 406 109 452 121
+rect 540 343 586 355
+rect -396 71 396 77
+rect -396 37 -384 71
+rect 384 37 396 71
+rect -396 31 396 37
+rect -396 -37 396 -31
+rect -396 -71 -384 -37
+rect 384 -71 396 -37
+rect -396 -77 396 -71
+rect -452 -121 -406 -109
+rect -452 -497 -446 -121
+rect -412 -497 -406 -121
+rect -452 -509 -406 -497
+rect 406 -121 452 -109
+rect 406 -497 412 -121
+rect 446 -497 452 -121
+rect 540 -343 546 343
+rect 580 -343 586 343
+rect 540 -355 586 -343
+rect 406 -509 452 -497
+rect -396 -547 396 -541
+rect -396 -581 -384 -547
+rect 384 -581 396 -547
+rect -396 -587 396 -581
+<< properties >>
+string FIXED_BBOX -563 -702 563 702
+string gencell sky130_fd_pr__nfet_g5v0d10v5
+string library sky130
+string parameters w 2 l 4 m 2 nf 1 diffcov 100 polycov 90 guard 1 glc 1 grc 1 gtc 1 gbc 1 tbcov 100 rlcov 100 topc 1 botc 1 poverlap 0 doverlap 1 lmin 0.50 wmin 0.42 compatible {sky130_fd_pr__nfet_01v8 sky130_fd_pr__nfet_01v8_lvt  sky130_fd_bs_flash__special_sonosfet_star  sky130_fd_pr__nfet_g5v0d10v5 sky130_fd_pr__nfet_05v0_nvt  sky130_fd_pr__nfet_03v3_nvt} full_metal 1 viasrc 100 viadrn 100 viagate 100 viagb 0 viagr 50 viagl 0 viagt 0
+<< end >>

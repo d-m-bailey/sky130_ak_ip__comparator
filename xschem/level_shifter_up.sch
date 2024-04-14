@@ -117,4 +117,4 @@ C {devices/lab_pin.sym} 350 -120 0 1 {name=p7 sig_type=std_logic lab=xb_lv}
 C {devices/lab_pin.sym} 530 -250 0 0 {name=p8 sig_type=std_logic lab=x_lv}
 C {devices/lab_pin.sym} 730 -270 0 1 {name=p9 sig_type=std_logic lab=xb_lv}
 C {devices/ipin.sym} 530 -230 0 0 {name=p5 lab=GND_LV}
-C {sky130_ak_ip__comparator/xschem/inverter.sym} 630 -250 0 0 {name=x1}
+C {inverter.sym} 630 -250 0 0 {name=x1}

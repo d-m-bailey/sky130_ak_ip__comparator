@@ -1,0 +1,11 @@
+** sch_path: /foss/designs/sky130_ak_ip__comparator/xschem/diff_pair.sch
+.subckt diff_pair INM INP GND OUTP OUTM
+*.PININFO INM:I INP:I GND:I OUTP:O OUTM:O
+XM1 OUTM INM GND GND sky130_fd_pr__nfet_g5v0d10v5 L=2 W=4 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=2 m=2
+XM2 OUTP INP GND GND sky130_fd_pr__nfet_g5v0d10v5 L=2 W=4 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
++ pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W'
++ sa=0 sb=0 sd=0 mult=2 m=2
+.ends
+.end

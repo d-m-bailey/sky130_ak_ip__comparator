@@ -5,11 +5,11 @@ K {}
 V {}
 S {}
 E {}
-L 4 -940 180 -220 180 {}
+L 4 -1060 180 -220 180 {}
 L 4 -220 -80 -220 180 {}
-L 4 -940 -80 -220 -80 {}
+L 4 -1060 -80 -220 -80 {}
 L 4 -600 -80 -600 180 {}
-L 4 -940 -80 -940 180 {}
+L 4 -1060 -80 -1060 180 {}
 L 4 -380 -80 -380 180 {}
 L 4 -940 -160 -220 -160 {}
 L 4 -940 -420 -220 -420 {}
@@ -20,9 +20,9 @@ T {Supply and Biasing} -670 -460 0 0 0.4 0.4 {}
 N -880 40 -880 60 {
 lab=trim[3]}
 N 130 -270 170 -270 {
-lab=Vinp}
-N 130 -250 170 -250 {
 lab=Vinm}
+N 130 -250 170 -250 {
+lab=Vinp}
 N 130 -330 170 -330 {
 lab=DVDD}
 N 130 -310 170 -310 {
@@ -34,7 +34,7 @@ lab=enable}
 N 130 -190 170 -190 {
 lab=hyst[1:0]}
 N 130 -170 170 -170 {
-lab=trim[3:0]}
+lab=trim[5:0]}
 N -800 -280 -800 -260 {
 lab=bias}
 N 130 -150 170 -150 {
@@ -65,56 +65,41 @@ N -400 -350 -400 -340 {
 lab=DVDD}
 N -400 -280 -400 -260 {
 lab=#net2}
-N 140 380 140 410 {
+N 110 320 110 350 {
 lab=Vcm}
-N 380 380 380 410 {
+N 350 320 350 350 {
 lab=Vin_diff}
-N 80 340 80 380 {
+N 50 280 50 320 {
 lab=Vcm}
-N 80 380 200 380 {
+N 50 320 170 320 {
 lab=Vcm}
-N 200 340 200 380 {
+N 170 280 170 320 {
 lab=Vcm}
-N 80 250 80 280 {
+N 50 190 50 220 {
 lab=Vinp}
-N 200 250 200 280 {
+N 170 190 170 220 {
 lab=Vinm}
+N -1000 40 -1000 60 {
+lab=trim[5]}
+N -940 40 -940 60 {
+lab=trim[4]}
 C {devices/vsource.sym} -880 90 0 0 {name=Vtrim3 value=0}
 C {devices/gnd.sym} -880 120 0 0 {name=l1 lab=GND}
 C {devices/lab_pin.sym} -880 40 1 0 {name=p2 sig_type=std_logic lab=trim[3]}
-C {devices/lab_pin.sym} 130 -250 0 0 {name=p3 sig_type=std_logic lab=Vinm}
-C {devices/lab_pin.sym} 130 -270 0 0 {name=p4 sig_type=std_logic lab=Vinp}
-C {devices/vsource.sym} -600 -230 0 0 {name=VDD_ANA value=2.95}
+C {devices/lab_pin.sym} 130 -250 0 0 {name=p3 sig_type=std_logic lab=Vinp}
+C {devices/lab_pin.sym} 130 -270 0 0 {name=p4 sig_type=std_logic lab=Vinm}
+C {devices/vsource.sym} -600 -230 0 0 {name=VDD_ANA value=3.3}
 C {devices/gnd.sym} -600 -200 0 0 {name=l3 lab=GND}
 C {devices/vsource.sym} -400 -230 0 0 {name=VDD_DIG value=1.8}
 C {devices/gnd.sym} -400 -200 0 0 {name=l4 lab=GND}
 C {devices/lab_pin.sym} 130 -110 0 0 {name=p9 sig_type=std_logic lab=GND}
 C {devices/lab_pin.sym} 130 -190 0 0 {name=p12 sig_type=std_logic lab=hyst[1:0]}
-C {devices/lab_pin.sym} 130 -170 0 0 {name=p13 sig_type=std_logic lab=trim[3:0]}
+C {devices/lab_pin.sym} 130 -170 0 0 {name=p13 sig_type=std_logic lab=trim[5:0]}
 C {devices/isource.sym} -800 -230 2 0 {name=Ibias value=400n}
 C {devices/gnd.sym} -800 -200 0 0 {name=l5 lab=GND}
 C {devices/lab_pin.sym} -800 -280 1 0 {name=p14 sig_type=std_logic lab=bias}
 C {devices/lab_pin.sym} 130 -150 0 0 {name=p15 sig_type=std_logic lab=bias}
-C {sky130_fd_pr/corner.sym} 250 -650 0 0 {name=CORNER only_toplevel=true corner=sf}
-C {devices/code_shown.sym} 930 -410 0 0 {name=NGSPICE only_toplevel=false value=
-"
-.save v(vout) v(vin_diff)
-.tran 3n 100u
-.temp 25
-.control
-   run
-   plot v(vout) 
-   plot v(vin_diff)
-   *plot v.x1.vmeas1#branch v.x1.vmeas6#branch v.x1.vmeas2#branch 
-   *plot v.x1.vmeas4#branch 
-   *plot v.x1.vmeas9#branch v.x1.vmeas10#branch v.x1.vmeas11#branch v.x1.vmeas12#branch
-   *plot v.x1.vmeas20#branch v.x1.vmeas21#branch
-   *plot v(x1.vfold_m) v(x1.vxm)
-   *plot v(x1.bias_p) v(x1.casc_p) v(x1.test) v(x1.casc_n) v(x1.bias_n)
-.endc
-.save all
-.options savecurrents
-"}
+C {sky130_fd_pr/corner.sym} 940 90 0 0 {name=CORNER only_toplevel=true corner=tt}
 C {devices/lab_pin.sym} 560 -260 0 1 {name=p5 sig_type=std_logic lab=Vout}
 C {devices/capa.sym} 560 -170 0 0 {name=C3
 m=1
@@ -148,18 +133,39 @@ C {devices/gnd.sym} -320 120 0 0 {name=l6 lab=GND}
 C {devices/lab_pin.sym} -320 40 1 0 {name=p23 sig_type=std_logic lab=enable}
 C {devices/ammeter.sym} -600 -310 2 0 {name=Vmeas_AVDD}
 C {devices/ammeter.sym} -400 -310 2 0 {name=Vmeas_DVDD}
-C {devices/vsource.sym} 140 440 0 0 {name=Vcm value=3}
-C {devices/gnd.sym} 140 470 0 0 {name=l8 lab=GND}
-C {devices/lab_pin.sym} 200 380 2 0 {name=p27 sig_type=std_logic lab=Vcm}
-C {devices/vsource.sym} 380 440 0 0 {name=Vin value="sin(0 100m 20k)"}
-C {devices/gnd.sym} 380 470 0 0 {name=l9 lab=GND}
-C {devices/lab_pin.sym} 380 380 1 0 {name=p28 sig_type=std_logic lab=Vin_diff}
-C {devices/vcvs.sym} 80 310 0 0 {name=E2 value=1/2}
-C {devices/vcvs.sym} 200 310 0 1 {name=E3 value=-1/2}
-C {devices/gnd.sym} 240 330 0 0 {name=l16 lab=GND}
-C {devices/gnd.sym} 40 330 0 0 {name=l17 lab=GND}
-C {devices/lab_pin.sym} 240 290 0 1 {name=p29 sig_type=std_logic lab=Vin_diff}
-C {devices/lab_pin.sym} 40 290 0 0 {name=p30 sig_type=std_logic lab=Vin_diff}
-C {devices/lab_pin.sym} 80 250 1 0 {name=p31 sig_type=std_logic lab=Vinp}
-C {devices/lab_pin.sym} 200 250 1 0 {name=p32 sig_type=std_logic lab=Vinm}
+C {devices/code_shown.sym} 730 -500 0 0 {name=NGSPICE only_toplevel=true value=
+"
+.save all
+.dc Vcm 0 3.3 0.1
+.control
+foreach val -10u -6u -4u -2u 2u 4u 6u 10u
+   alter Vin $val
+   run
+end
+plot dc1.v(x1.vop)-dc1.v(x1.vom) dc2.v(x1.vop)-dc2.v(x1.vom) dc3.v(x1.vop)-dc3.v(x1.vom) dc4.v(x1.vop)-dc4.v(x1.vom) dc5.v(x1.vop)-dc5.v(x1.vom) dc6.v(x1.vop)-dc6.v(x1.vom) dc7.v(x1.vop)-dc7.v(x1.vom) dc8.v(x1.vop)-dc8.v(x1.vom)
+plot dc1.v.x1.vmeas_top_p#branch-dc1.v.x1.vmeas_top_m#branch dc1.v.x1.vmeas_bot_p#branch-dc1.v.x1.vmeas_bot_m#branch
+*set filetype = ascii
+*write results.raw gain_sweep
+.endc
+"}
+C {devices/vsource.sym} 110 380 0 0 {name=Vcm value=1}
+C {devices/gnd.sym} 110 410 0 0 {name=l8 lab=GND}
+C {devices/lab_pin.sym} 170 320 2 0 {name=p27 sig_type=std_logic lab=Vcm}
+C {devices/vsource.sym} 350 380 0 0 {name=Vin value=0}
+C {devices/gnd.sym} 350 410 0 0 {name=l9 lab=GND}
+C {devices/lab_pin.sym} 350 320 1 0 {name=p28 sig_type=std_logic lab=Vin_diff}
+C {devices/vcvs.sym} 50 250 0 0 {name=E2 value=0.5}
+C {devices/vcvs.sym} 170 250 0 1 {name=E3 value=-0.5}
+C {devices/gnd.sym} 210 270 0 0 {name=l16 lab=GND}
+C {devices/gnd.sym} 10 270 0 0 {name=l17 lab=GND}
+C {devices/lab_pin.sym} 210 230 0 1 {name=p29 sig_type=std_logic lab=Vin_diff}
+C {devices/lab_pin.sym} 10 230 0 0 {name=p30 sig_type=std_logic lab=Vin_diff}
+C {devices/lab_pin.sym} 50 190 1 0 {name=p31 sig_type=std_logic lab=Vinp}
+C {devices/lab_pin.sym} 170 190 1 0 {name=p32 sig_type=std_logic lab=Vinm}
+C {devices/vsource.sym} -1000 90 0 0 {name=Vtrim5 value=0}
+C {devices/gnd.sym} -1000 120 0 0 {name=l7 lab=GND}
+C {devices/lab_pin.sym} -1000 40 1 0 {name=p1 sig_type=std_logic lab=trim[5]}
+C {devices/vsource.sym} -940 90 0 0 {name=Vtrim4 value=0}
+C {devices/gnd.sym} -940 120 0 0 {name=l13 lab=GND}
+C {devices/lab_pin.sym} -940 40 1 0 {name=p16 sig_type=std_logic lab=trim[4]}
 C {comparator_new.sym} 320 -200 0 0 {name=x1}
