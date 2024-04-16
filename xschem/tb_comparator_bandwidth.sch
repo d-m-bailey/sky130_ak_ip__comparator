@@ -159,7 +159,7 @@ C {devices/vsource.sym} 30 300 0 0 {name=Vcm value=3}
 C {devices/gnd.sym} 30 330 0 0 {name=l8 lab=GND}
 C {devices/lab_pin.sym} 90 240 2 0 {name=p27 sig_type=std_logic lab=Vcm}
 C {devices/vsource.sym} 270 300 0 0 {name=Vin 
-value="sin(0 20m 20k)"
+value="sin(0 100m 1Meg)"
 *value=0}
 C {devices/gnd.sym} 270 330 0 0 {name=l9 lab=GND}
 C {devices/lab_pin.sym} 270 240 1 0 {name=p28 sig_type=std_logic lab=Vin_diff}
@@ -186,7 +186,7 @@ C {devices/lab_pin.sym} -700 40 1 0 {name=p11 sig_type=std_logic lab=trim[0]}
 C {devices/vsource.sym} -540 90 0 0 {name=Vhyst1 value=0}
 C {devices/gnd.sym} -540 120 0 0 {name=l14 lab=GND}
 C {devices/lab_pin.sym} -540 40 1 0 {name=p17 sig_type=std_logic lab=hyst[1]}
-C {devices/vsource.sym} -480 90 0 0 {name=Vhyst0 value=1.8}
+C {devices/vsource.sym} -480 90 0 0 {name=Vhyst0 value=0}
 C {devices/gnd.sym} -480 120 0 0 {name=l15 lab=GND}
 C {devices/lab_pin.sym} -480 40 1 0 {name=p18 sig_type=std_logic lab=hyst[0]}
 C {devices/vsource.sym} -320 90 0 0 {name=Venable value=1.8}
