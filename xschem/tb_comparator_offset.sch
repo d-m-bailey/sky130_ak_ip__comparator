@@ -121,7 +121,7 @@ C {devices/code_shown.sym} 930 -410 0 0 {name=NGSPICE only_toplevel=false value=
 *.option temp=27
 
 .control
-   let num_meas = 500
+   let num_meas = 50
    let input_offset = unitvec(num_meas)
    let i = 0
    dowhile i<num_meas

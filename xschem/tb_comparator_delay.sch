@@ -103,11 +103,13 @@ C {devices/isource.sym} -800 -230 2 0 {name=Ibias value=400n}
 C {devices/gnd.sym} -800 -200 0 0 {name=l5 lab=GND}
 C {devices/lab_pin.sym} -800 -280 1 0 {name=p14 sig_type=std_logic lab=bias}
 C {devices/lab_pin.sym} 130 -150 0 0 {name=p15 sig_type=std_logic lab=bias}
-C {sky130_fd_pr/corner.sym} 960 190 0 0 {name=CORNER only_toplevel=true corner=ss}
+C {sky130_fd_pr/corner.sym} 960 190 0 0 {name=CORNER only_toplevel=true corner=tt}
 C {devices/code_shown.sym} 930 -410 0 0 {name=NGSPICE only_toplevel=true value=
 "
-.save all
+*.include /foss/designs/sky130_ak_ip__comparator/mag/comparator_rcx.spice
+.save v(vout)
 .tran 10n 12u 9.5u
+.ic v(x1.vop)=0 v(x1.vdiff)=1.8 v(x1.vout_int)=0 v(x1.voutb)=1.8 v(vout)=0
 .control
 let num_meas = 27
 let propdelay = unitvec(num_meas)

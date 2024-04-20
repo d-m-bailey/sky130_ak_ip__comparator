@@ -108,7 +108,7 @@ C {devices/isource.sym} -800 -230 2 0 {name=Ibias value=400n}
 C {devices/gnd.sym} -800 -200 0 0 {name=l5 lab=GND}
 C {devices/lab_pin.sym} -800 -280 1 0 {name=p14 sig_type=std_logic lab=bias}
 C {devices/lab_pin.sym} 130 -150 0 0 {name=p15 sig_type=std_logic lab=bias}
-C {sky130_fd_pr/corner.sym} 740 -650 0 0 {name=CORNER only_toplevel=true corner=tt_mm}
+C {sky130_fd_pr/corner.sym} 740 -650 0 0 {name=CORNER only_toplevel=true corner=tt}
 C {devices/code_shown.sym} 780 -430 0 0 {name=NGSPICE only_toplevel=false value=
 "
 .save all

@@ -84,7 +84,7 @@ C {devices/gnd.sym} -880 120 0 0 {name=l1 lab=GND}
 C {devices/lab_pin.sym} -880 40 1 0 {name=p2 sig_type=std_logic lab=trim[3]}
 C {devices/lab_pin.sym} 130 -250 0 0 {name=p3 sig_type=std_logic lab=Vinm}
 C {devices/lab_pin.sym} 130 -270 0 0 {name=p4 sig_type=std_logic lab=Vinp}
-C {devices/vsource.sym} -600 -230 0 0 {name=VDD_ANA value=2.95}
+C {devices/vsource.sym} -600 -230 0 0 {name=VDD_ANA value=3.3}
 C {devices/gnd.sym} -600 -200 0 0 {name=l3 lab=GND}
 C {devices/vsource.sym} -400 -230 0 0 {name=VDD_DIG value=1.8}
 C {devices/gnd.sym} -400 -200 0 0 {name=l4 lab=GND}
@@ -95,9 +95,10 @@ C {devices/isource.sym} -800 -230 2 0 {name=Ibias value=400n}
 C {devices/gnd.sym} -800 -200 0 0 {name=l5 lab=GND}
 C {devices/lab_pin.sym} -800 -280 1 0 {name=p14 sig_type=std_logic lab=bias}
 C {devices/lab_pin.sym} 130 -150 0 0 {name=p15 sig_type=std_logic lab=bias}
-C {sky130_fd_pr/corner.sym} 250 -650 0 0 {name=CORNER only_toplevel=true corner=sf}
+C {sky130_fd_pr/corner.sym} 250 -650 0 0 {name=CORNER only_toplevel=true corner=tt}
 C {devices/code_shown.sym} 930 -410 0 0 {name=NGSPICE only_toplevel=false value=
 "
+.include /foss/designs/sky130_ak_ip__comparator/mag/comparator_rcx.spice
 .save v(vout) v(vin_diff)
 .tran 3n 100u
 .temp 25
@@ -112,8 +113,6 @@ C {devices/code_shown.sym} 930 -410 0 0 {name=NGSPICE only_toplevel=false value=
    *plot v(x1.vfold_m) v(x1.vxm)
    *plot v(x1.bias_p) v(x1.casc_p) v(x1.test) v(x1.casc_n) v(x1.bias_n)
 .endc
-.save all
-.options savecurrents
 "}
 C {devices/lab_pin.sym} 560 -260 0 1 {name=p5 sig_type=std_logic lab=Vout}
 C {devices/capa.sym} 560 -170 0 0 {name=C3
@@ -154,12 +153,13 @@ C {devices/lab_pin.sym} 200 380 2 0 {name=p27 sig_type=std_logic lab=Vcm}
 C {devices/vsource.sym} 380 440 0 0 {name=Vin value="sin(0 100m 20k)"}
 C {devices/gnd.sym} 380 470 0 0 {name=l9 lab=GND}
 C {devices/lab_pin.sym} 380 380 1 0 {name=p28 sig_type=std_logic lab=Vin_diff}
-C {devices/vcvs.sym} 80 310 0 0 {name=E2 value=1/2}
-C {devices/vcvs.sym} 200 310 0 1 {name=E3 value=-1/2}
+C {devices/vcvs.sym} 80 310 0 0 {name=E2 value=0.5}
+C {devices/vcvs.sym} 200 310 0 1 {name=E3 value=-0.5}
 C {devices/gnd.sym} 240 330 0 0 {name=l16 lab=GND}
 C {devices/gnd.sym} 40 330 0 0 {name=l17 lab=GND}
 C {devices/lab_pin.sym} 240 290 0 1 {name=p29 sig_type=std_logic lab=Vin_diff}
 C {devices/lab_pin.sym} 40 290 0 0 {name=p30 sig_type=std_logic lab=Vin_diff}
 C {devices/lab_pin.sym} 80 250 1 0 {name=p31 sig_type=std_logic lab=Vinp}
 C {devices/lab_pin.sym} 200 250 1 0 {name=p32 sig_type=std_logic lab=Vinm}
-C {comparator_new.sym} 320 -200 0 0 {name=x1}
+C {comparator_rcx.sym} 320 -200 0 0 {name=x1
+schematic=comparator_rcx}

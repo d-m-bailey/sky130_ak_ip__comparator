@@ -96,7 +96,7 @@ C {devices/vsource.sym} 240 210 0 0 {name=Vp
 value="pulse(-100m 100m 0 5m 5m 1m 20m)"
 *value="pulse(0 5 0 100u 100u 10n 1m)"
 *value=10m
-*value="pulse(-100m 100m 0 1m 1m 0 200u)"}
+*value="pulse(-100m 100m 0 10u 10u 0 200u)"}
 C {devices/lab_pin.sym} 240 100 0 1 {name=p1 sig_type=std_logic lab=Vinp}
 C {devices/lab_pin.sym} 130 -250 0 0 {name=p3 sig_type=std_logic lab=Vinm}
 C {devices/lab_pin.sym} 130 -270 0 0 {name=p4 sig_type=std_logic lab=Vinp}
@@ -138,7 +138,9 @@ C {devices/lab_pin.sym} 240 370 0 1 {name=p27 sig_type=std_logic lab=Vin_diff}
 C {devices/code_shown.sym} 690 -480 0 0 {name=NGSPICE1 only_toplevel=false value=
 "
 .save all
-.tran 10u 11m
+.tran 10u 11m 100u uic
+.ic v(x1.vop)=0 v(x1.vdiff)=1.8 v(x1.vout_int)=0 v(x1.voutb)=1.8 v(x1.vout)=0
+*.nodeset v(x1.vop)=0 v(x1.vdiff)=1.8 v(x1.vout_int)=0 v(x1.voutb)=1.8 v(x1.vout)=0
 
 .control
 let num_meas = 27
@@ -150,7 +152,7 @@ foreach temp_val -40 27 85
    foreach vdd_ana_val 2.95 3.3 5.5
       alter VDD_ANA $vdd_ana_val
       foreach vm_val 0.1 \{$vdd_ana_val/2\} \{-0.1+$vdd_ana_val\}
-         alter Vm $vm_val
+         alter Vm $vm_val 
          run
          meas tran t_cross when v(vout)=0.9 rise=1
          meas tran in_cross find v(vin_diff) at=t_cross
