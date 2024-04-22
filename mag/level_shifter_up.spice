@@ -1,0 +1,33 @@
+* NGSPICE file created from level_shifter_up.ext - technology: sky130A
+
+.subckt sky130_fd_pr__pfet_g5v0d10v5_8T5BGA a_n187_n136# a_129_n136# w_n387_n362#
++ a_29_n162# a_n129_n162# a_n29_n136#
+X0 a_n29_n136# a_n129_n162# a_n187_n136# w_n387_n362# sky130_fd_pr__pfet_g5v0d10v5 ad=2.9e+11p pd=2.58e+06u as=2.9e+11p ps=2.58e+06u w=1e+06u l=500000u
+X1 a_129_n136# a_29_n162# a_n29_n136# w_n387_n362# sky130_fd_pr__pfet_g5v0d10v5 ad=2.9e+11p pd=2.58e+06u as=0p ps=0u w=1e+06u l=500000u
+.ends
+
+.subckt sky130_fd_pr__pfet_g5v0d10v5_4V4BDM a_n29_n50# a_n187_n50# w_n387_n347# a_29_n147#
++ a_n129_n147# a_129_n50#
+X0 a_129_n50# a_29_n147# a_n29_n50# w_n387_n347# sky130_fd_pr__pfet_g5v0d10v5 ad=1.45e+11p pd=1.58e+06u as=1.45e+11p ps=1.58e+06u w=500000u l=500000u
+X1 a_n29_n50# a_n129_n147# a_n187_n50# w_n387_n347# sky130_fd_pr__pfet_g5v0d10v5 ad=0p pd=0u as=1.45e+11p ps=1.58e+06u w=500000u l=500000u
+.ends
+
+.subckt sky130_fd_pr__nfet_g5v0d10v5_S48KL6 a_n321_n322# a_n29_n100# a_n187_n100#
++ a_129_n100# a_29_n188# a_n129_n188#
+X0 a_129_n100# a_29_n188# a_n29_n100# a_n321_n322# sky130_fd_pr__nfet_g5v0d10v5 ad=2.9e+11p pd=2.58e+06u as=2.9e+11p ps=2.58e+06u w=1e+06u l=500000u
+X1 a_n29_n100# a_n129_n188# a_n187_n100# a_n321_n322# sky130_fd_pr__nfet_g5v0d10v5 ad=0p pd=0u as=2.9e+11p ps=2.58e+06u w=1e+06u l=500000u
+.ends
+
+.subckt sky130_fd_pr__nfet_g5v0d10v5_C5EREZ a_50_n100# a_n242_n322# a_n108_n100# a_n50_n188#
+X0 a_50_n100# a_n50_n188# a_n108_n100# a_n242_n322# sky130_fd_pr__nfet_g5v0d10v5 ad=2.9e+11p pd=2.58e+06u as=2.9e+11p ps=2.58e+06u w=1e+06u l=500000u
+.ends
+
+.subckt level_shifter_up VDD_HV GND_HV x_lv x_hv xb_hv VDD_LV
+Xsky130_fd_pr__pfet_g5v0d10v5_8T5BGA_0 m1_380_n360# m1_380_n360# VDD_LV x_lv x_lv
++ VDD_LV sky130_fd_pr__pfet_g5v0d10v5_8T5BGA
+Xsky130_fd_pr__pfet_g5v0d10v5_4V4BDM_0 VDD_HV xb_hv VDD_HV xb_hv x_hv x_hv sky130_fd_pr__pfet_g5v0d10v5_4V4BDM
+Xsky130_fd_pr__nfet_g5v0d10v5_S48KL6_0 GND_HV GND_HV x_hv xb_hv x_lv m1_380_n360#
++ sky130_fd_pr__nfet_g5v0d10v5_S48KL6
+Xsky130_fd_pr__nfet_g5v0d10v5_C5EREZ_0 m1_380_n360# GND_HV GND_HV x_lv sky130_fd_pr__nfet_g5v0d10v5_C5EREZ
+.ends
+

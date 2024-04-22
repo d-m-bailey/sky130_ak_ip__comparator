@@ -1,0 +1,16 @@
+** sch_path: /foss/designs/sky130_ak_ip__comparator/xschem/comparator_rcx.sch
+**.subckt comparator_rcx Vinp Vinm AVDD AGND en hyst[1],hyst[0]
+*+ trim[5],trim[4],trim[3],trim[2],trim[1],trim[0] Vout DVDD ibias DGND
+*.ipin Vinp
+*.ipin Vinm
+*.ipin AVDD
+*.ipin AGND
+*.ipin en
+*.ipin hyst[1],hyst[0]
+*.ipin trim[5],trim[4],trim[3],trim[2],trim[1],trim[0]
+*.opin Vout
+*.ipin DVDD
+*.ipin ibias
+*.ipin DGND
+**.ends
+.end

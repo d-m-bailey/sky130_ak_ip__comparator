@@ -161,7 +161,6 @@ XM117 AGND AGND AGND AGND sky130_fd_pr__nfet_g5v0d10v5 L=1 W=2 nf=1 m=14
 XM142 AVDD AVDD AVDD AVDD sky130_fd_pr__pfet_g5v0d10v5 L=4 W=2 nf=1 m=32
 XM143 AVDD AVDD AVDD AVDD sky130_fd_pr__pfet_g5v0d10v5 L=1 W=2 nf=1 m=32
 XR3 AGND AGND AGND sky130_fd_pr__res_high_po_2p85 L=2.85*11.2 mult=1 m=1
-XR4 AVDD AVDD AGND sky130_fd_pr__res_high_po_2p85 L=2.85*11.2 mult=1 m=1
 XM144 casc_n casc_n casc_n AGND sky130_fd_pr__nfet_g5v0d10v5 L=1 W=2 nf=1 m=11
 XM145 net55 bias_n AGND AGND sky130_fd_pr__nfet_g5v0d10v5 L=4 W=2 nf=1 m=1
 XM146 bias_stg2 casc_n net55 AGND sky130_fd_pr__nfet_g5v0d10v5 L=1 W=2 nf=1 m=1
@@ -169,7 +168,8 @@ XM147 bias_stg2 bias_stg2 AVDD AVDD sky130_fd_pr__pfet_g5v0d10v5 L=4 W=2 nf=1 m=
 XM148 casc_p casc_p casc_p AVDD sky130_fd_pr__pfet_g5v0d10v5 L=1 W=2 nf=1 m=20
 XM149 AVDD AVDD AVDD AVDD sky130_fd_pr__pfet_g5v0d10v5 L=4 W=2 nf=1 m=12
 XR5 AGND AGND AGND sky130_fd_pr__res_high_po_2p85 L=2.85*11.2 mult=1 m=1
-XR6 AVDD AVDD AGND sky130_fd_pr__res_high_po_2p85 L=2.85*11.2 mult=1 m=1
+XR7 AGND AGND AGND sky130_fd_pr__res_high_po_2p85 L=2.85*11.2 mult=1 m=1
+XR8 AGND AGND AGND sky130_fd_pr__res_high_po_2p85 L=2.85*11.2 mult=1 m=1
 .ends
 
 * expanding   symbol:  level_shifter_up.sym # of pins=6

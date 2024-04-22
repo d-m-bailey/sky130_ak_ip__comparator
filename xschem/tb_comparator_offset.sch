@@ -197,4 +197,4 @@ C {devices/lab_pin.sym} -1000 40 1 0 {name=p28 sig_type=std_logic lab=trim[5]}
 C {devices/vsource.sym} -940 90 0 0 {name=Vtrim4 value=0}
 C {devices/gnd.sym} -940 120 0 0 {name=l16 lab=GND}
 C {devices/lab_pin.sym} -940 40 1 0 {name=p29 sig_type=std_logic lab=trim[4]}
-C {comparator_new.sym} 320 -200 0 0 {name=x1}
+C {comparator.sym} 320 -200 0 0 {name=x1}

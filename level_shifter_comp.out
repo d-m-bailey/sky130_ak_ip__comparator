@@ -1,0 +1,61 @@
+
+Circuit 1 cell sky130_fd_pr__pfet_g5v0d10v5 and Circuit 2 cell sky130_fd_pr__pfet_g5v0d10v5 are black boxes.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_g5v0d10v5 is a placeholder, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_g5v0d10v5 is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__pfet_g5v0d10v5    |Circuit 2: sky130_fd_pr__pfet_g5v0d10v5    
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__pfet_g5v0d10v5 and sky130_fd_pr__pfet_g5v0d10v5 are equivalent.
+
+Circuit 1 cell sky130_fd_pr__nfet_g5v0d10v5 and Circuit 2 cell sky130_fd_pr__nfet_g5v0d10v5 are black boxes.
+Warning: Equate pins:  cell sky130_fd_pr__nfet_g5v0d10v5 is a placeholder, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__nfet_g5v0d10v5 is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__nfet_g5v0d10v5    |Circuit 2: sky130_fd_pr__nfet_g5v0d10v5    
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__nfet_g5v0d10v5 and sky130_fd_pr__nfet_g5v0d10v5 are equivalent.
+Flattening unmatched subcell sky130_fd_pr__pfet_g5v0d10v5_8T5BGA in circuit level_shifter_up (1)(1 instance)
+Flattening unmatched subcell sky130_fd_pr__pfet_g5v0d10v5_4V4BDM in circuit level_shifter_up (1)(1 instance)
+Flattening unmatched subcell sky130_fd_pr__nfet_g5v0d10v5_S48KL6 in circuit level_shifter_up (1)(1 instance)
+Flattening unmatched subcell sky130_fd_pr__nfet_g5v0d10v5_C5EREZ in circuit level_shifter_up (1)(1 instance)
+
+Class level_shifter_up (1):  Merged 1 parallel devices.
+Subcircuit summary:
+Circuit 1: level_shifter_up                |Circuit 2: level_shifter_up                
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__nfet_g5v0d10v5 (3)           |sky130_fd_pr__nfet_g5v0d10v5 (3)           
+sky130_fd_pr__pfet_g5v0d10v5 (3)           |sky130_fd_pr__pfet_g5v0d10v5 (4->3)        
+Number of devices: 6                       |Number of devices: 6                       
+Number of nets: 7                          |Number of nets: 7                          
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: level_shifter_up                |Circuit 2: level_shifter_up                
+-------------------------------------------|-------------------------------------------
+VDD_LV                                     |VDD_LV                                     
+VDD_HV                                     |VDD_HV                                     
+GND_HV                                     |GND_HV                                     
+x_lv                                       |x_lv                                       
+x_hv                                       |x_hv                                       
+xb_hv                                      |xb_hv                                      
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes level_shifter_up and level_shifter_up are equivalent.
+
+Final result: Circuits match uniquely.
+.

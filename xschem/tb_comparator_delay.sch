@@ -103,15 +103,16 @@ C {devices/isource.sym} -800 -230 2 0 {name=Ibias value=400n}
 C {devices/gnd.sym} -800 -200 0 0 {name=l5 lab=GND}
 C {devices/lab_pin.sym} -800 -280 1 0 {name=p14 sig_type=std_logic lab=bias}
 C {devices/lab_pin.sym} 130 -150 0 0 {name=p15 sig_type=std_logic lab=bias}
-C {sky130_fd_pr/corner.sym} 960 190 0 0 {name=CORNER only_toplevel=true corner=tt}
+C {sky130_fd_pr/corner.sym} 920 -690 0 0 {name=CORNER only_toplevel=true corner=fs}
 C {devices/code_shown.sym} 930 -410 0 0 {name=NGSPICE only_toplevel=true value=
 "
 *.include /foss/designs/sky130_ak_ip__comparator/mag/comparator_rcx.spice
 .save v(vout)
-.tran 10n 12u 9.5u
+.tran 3n 12u 9.5u
 .ic v(x1.vop)=0 v(x1.vdiff)=1.8 v(x1.vout_int)=0 v(x1.voutb)=1.8 v(vout)=0
 .control
-let num_meas = 27
+let vec=unitvec(1)
+let num_meas = 45
 let propdelay = unitvec(num_meas)
 let x = unitvec(num_meas)
 let i = 0
@@ -119,18 +120,21 @@ foreach temp_val -40 27 85
    set temp=$temp_val
    foreach vdd_ana_val 2.95 3.3 5.5
       alter VDD_ANA $vdd_ana_val
-      foreach vm_val 0.1 \{$vdd_ana_val/2\} \{-0.1+$vdd_ana_val\}
+      foreach vm_val 0.1 \{$vdd_ana_val*0.25\} \{$vdd_ana_val/2\} \{$vdd_ana_val*0.75\} \{-0.1+$vdd_ana_val\}
          alter Vm $vm_val
          run
          meas tran t_cross when v(vout)=0.9 rise=1
-         let propdelay[i] = t_cross*1e6 - 10
+         let delay = t_cross - 10e-6
+         let propdelay[i] = delay
+         set filetype=ascii
+         set appendwrite
+         set wr_singlescale
+         setscale vec
+         wrdata results_delay.out delay
          let i = i+1
       end
    end
 end
-plot tran1.v(vout) tran2.v(vout) tran3.v(vout) tran4.v(vout) tran5.v(vout) tran6.v(vout) tran7.v(vout) tran8.v(vout) tran9.v(vout) tran10.v(vout) tran11.v(vout) tran12.v(vout) tran13.v(vout) tran14.v(vout) tran15.v(vout) tran16.v(vout) tran17.v(vout) tran18.v(vout) tran19.v(vout) tran20.v(vout) tran21.v(vout) tran22.v(vout) tran23.v(vout) tran24.v(vout) tran25.v(vout) tran26.v(vout) tran27.v(vout)
-set filetype = ascii
-write results.raw propdelay
 print vecmax(propdelay)
 print vecmin(propdelay)
 .endc
@@ -138,7 +142,7 @@ print vecmin(propdelay)
 C {devices/lab_pin.sym} 560 -260 0 1 {name=p5 sig_type=std_logic lab=Vout}
 C {devices/capa.sym} 560 -170 0 0 {name=C3
 m=1
-value=1p
+value=2p
 footprint=1206
 device="ceramic capacitor"}
 C {devices/gnd.sym} 560 -140 0 0 {name=l2 lab=GND}
@@ -180,4 +184,4 @@ C {devices/lab_pin.sym} -1000 40 1 0 {name=p24 sig_type=std_logic lab=trim[5]}
 C {devices/vsource.sym} -940 90 0 0 {name=Vtrim4 value=0}
 C {devices/gnd.sym} -940 120 0 0 {name=l8 lab=GND}
 C {devices/lab_pin.sym} -940 40 1 0 {name=p25 sig_type=std_logic lab=trim[4]}
-C {comparator_new.sym} 320 -200 0 0 {name=x1}
+C {comparator.sym} 320 -200 0 0 {name=x1}

@@ -1,0 +1,85 @@
+** sch_path: /foss/designs/sky130_ak_ip__comparator/xschem/tb_comparator.sch
+**.subckt tb_comparator
+Vtrim3 trim[3] GND 0
+.save i(vtrim3)
+VDD_ANA net1 GND 3.3
+.save i(vdd_ana)
+VDD_DIG net2 GND 1.8
+.save i(vdd_dig)
+Ibias GND bias 400n
+C3 Vout GND 1p m=1
+Vtrim2 trim[2] GND 0
+.save i(vtrim2)
+Vtrim1 trim[1] GND 0
+.save i(vtrim1)
+Vtrim0 trim[0] GND 0
+.save i(vtrim0)
+Vhyst1 hyst[1] GND 0
+.save i(vhyst1)
+Vhyst0 hyst[0] GND 0
+.save i(vhyst0)
+Venable enable GND 1.8
+.save i(venable)
+Vmeas_AVDD net1 AVDD 0
+.save i(vmeas_avdd)
+Vmeas_DVDD net2 DVDD 0
+.save i(vmeas_dvdd)
+Vcm Vcm GND 3
+.save i(vcm)
+Vin Vin_diff GND sin(0 100m 20k)
+.save i(vin)
+E2 Vinp Vcm Vin_diff GND 0.5
+E3 Vinm Vcm Vin_diff GND -0.5
+x1 DVDD AVDD GND Vinp Vout Vinm enable hyst[1] hyst[0] trim[3] trim[2] trim[1] trim[0] trim[3]
++ trim[2] bias GND comparator_rcx
+**** begin user architecture code
+
+.param mc_mm_switch=0
+.param mc_pr_switch=0
+.include /foss/pdks/sky130A/libs.tech/ngspice/corners/tt.spice
+.include /foss/pdks/sky130A/libs.tech/ngspice/r+c/res_typical__cap_typical.spice
+.include /foss/pdks/sky130A/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice
+.include /foss/pdks/sky130A/libs.tech/ngspice/corners/tt/specialized_cells.spice
+
+
+
+.include /foss/designs/sky130_ak_ip__comparator/mag/comparator_rcx.spice
+.save v(vout) v(vin_diff)
+.tran 3n 100u
+.temp 25
+.control
+   run
+   plot v(vout)
+   plot v(vin_diff)
+   *plot v.x1.vmeas1#branch v.x1.vmeas6#branch v.x1.vmeas2#branch
+   *plot v.x1.vmeas4#branch
+   *plot v.x1.vmeas9#branch v.x1.vmeas10#branch v.x1.vmeas11#branch v.x1.vmeas12#branch
+   *plot v.x1.vmeas20#branch v.x1.vmeas21#branch
+   *plot v(x1.vfold_m) v(x1.vxm)
+   *plot v(x1.bias_p) v(x1.casc_p) v(x1.test) v(x1.casc_n) v(x1.bias_n)
+.endc
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  comparator_rcx.sym # of pins=11
+** sym_path: /foss/designs/sky130_ak_ip__comparator/xschem/comparator_rcx.sym
+** sch_path: /foss/designs/sky130_ak_ip__comparator/xschem/comparator_rcx.sch
+.subckt comparator_rcx DVDD AVDD AGND Vinp Vout Vinm en hyst[1] hyst[0] trim[5] trim[4] trim[3]
++ trim[2] trim[1] trim[0] ibias DGND
+*.ipin Vinp
+*.ipin Vinm
+*.ipin AVDD
+*.ipin AGND
+*.ipin en
+*.ipin hyst[1],hyst[0]
+*.ipin trim[5],trim[4],trim[3],trim[2],trim[1],trim[0]
+*.opin Vout
+*.ipin DVDD
+*.ipin ibias
+*.ipin DGND
+.ends
+
+.GLOBAL GND
+.end

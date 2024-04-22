@@ -7,7 +7,7 @@ VDD_ANA net1 GND 5
 VDD_DIG net2 GND 1.8
 .save i(vdd_dig)
 Ibias GND bias 400n
-C3 Vout GND 1p m=1
+C3 Vout GND 2p m=1
 Vm Vinm GND 1
 .save i(vm)
 Vmeas_AVDD net1 AVDD 0
@@ -33,24 +33,25 @@ Vtrim5 trim[5] GND 0
 Vtrim4 trim[4] GND 0
 .save i(vtrim4)
 x1 DVDD AVDD GND Vinp Vout Vinm enable hyst[1] hyst[0] trim[5] trim[4] trim[3] trim[2] trim[1]
-+ trim[0] bias comparator_new
++ trim[0] bias comparator
 **** begin user architecture code
 
 .param mc_mm_switch=0
 .param mc_pr_switch=0
-.include /foss/pdks/sky130A/libs.tech/ngspice/corners/tt.spice
+.include /foss/pdks/sky130A/libs.tech/ngspice/corners/fs.spice
 .include /foss/pdks/sky130A/libs.tech/ngspice/r+c/res_typical__cap_typical.spice
 .include /foss/pdks/sky130A/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice
-.include /foss/pdks/sky130A/libs.tech/ngspice/corners/tt/specialized_cells.spice
+.include /foss/pdks/sky130A/libs.tech/ngspice/corners/fs/specialized_cells.spice
 
 
 
 *.include /foss/designs/sky130_ak_ip__comparator/mag/comparator_rcx.spice
 .save v(vout)
-.tran 10n 12u 9.5u
+.tran 3n 12u 9.5u
 .ic v(x1.vop)=0 v(x1.vdiff)=1.8 v(x1.vout_int)=0 v(x1.voutb)=1.8 v(vout)=0
 .control
-let num_meas = 27
+let vec=unitvec(1)
+let num_meas = 45
 let propdelay = unitvec(num_meas)
 let x = unitvec(num_meas)
 let i = 0
@@ -58,21 +59,21 @@ foreach temp_val -40 27 85
    set temp=$temp_val
    foreach vdd_ana_val 2.95 3.3 5.5
       alter VDD_ANA $vdd_ana_val
-      foreach vm_val 0.1 {$vdd_ana_val/2} {-0.1+$vdd_ana_val}
+      foreach vm_val 0.1 {$vdd_ana_val*0.25} {$vdd_ana_val/2} {$vdd_ana_val*0.75} {-0.1+$vdd_ana_val}
          alter Vm $vm_val
          run
          meas tran t_cross when v(vout)=0.9 rise=1
-         let propdelay[i] = t_cross*1e6 - 10
+         let delay = t_cross - 10e-6
+         let propdelay[i] = delay
+         set filetype=ascii
+         set appendwrite
+         set wr_singlescale
+         setscale vec
+         wrdata results_delay.out delay
          let i = i+1
       end
    end
 end
-plot tran1.v(vout) tran2.v(vout) tran3.v(vout) tran4.v(vout) tran5.v(vout) tran6.v(vout)
-+ tran7.v(vout) tran8.v(vout) tran9.v(vout) tran10.v(vout) tran11.v(vout) tran12.v(vout) tran13.v(vout)
-+ tran14.v(vout) tran15.v(vout) tran16.v(vout) tran17.v(vout) tran18.v(vout) tran19.v(vout) tran20.v(vout)
-+ tran21.v(vout) tran22.v(vout) tran23.v(vout) tran24.v(vout) tran25.v(vout) tran26.v(vout) tran27.v(vout)
-set filetype = ascii
-write results.raw propdelay
 print vecmax(propdelay)
 print vecmin(propdelay)
 .endc
@@ -81,11 +82,11 @@ print vecmin(propdelay)
 **** end user architecture code
 **.ends
 
-* expanding   symbol:  comparator_new.sym # of pins=10
-** sym_path: /foss/designs/sky130_ak_ip__comparator/xschem/comparator_new.sym
-** sch_path: /foss/designs/sky130_ak_ip__comparator/xschem/comparator_new.sch
-.subckt comparator_new DVDD AVDD AGND Vinp Vout Vinm en hyst[1] hyst[0] trim[5] trim[4] trim[3]
-+ trim[2] trim[1] trim[0] ibias
+* expanding   symbol:  comparator.sym # of pins=10
+** sym_path: /foss/designs/sky130_ak_ip__comparator/xschem/comparator.sym
+** sch_path: /foss/designs/sky130_ak_ip__comparator/xschem/comparator.sch
+.subckt comparator DVDD AVDD AGND Vinp Vout Vinm en hyst[1] hyst[0] trim[5] trim[4] trim[3] trim[2]
++ trim[1] trim[0] ibias
 *.ipin Vinp
 *.ipin Vinm
 *.ipin AVDD
@@ -201,12 +202,12 @@ XM69 Vom_stg2 Vop_stg2 AGND AGND sky130_fd_pr__nfet_g5v0d10v5 L=2 W=0.5 nf=1 ad=
 XM15 bias_p en_hv AVDD AVDD sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=4 nf=2 ad='int((nf+1)/2) * W/nf * 0.29'
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
 + nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4
-x2 AVDD trim2b_hv trim2_hv trim[2] AGND level_shifter_up
-x4 AVDD trim1b_hv trim1_hv trim[1] AGND level_shifter_up
-x5 AVDD trim0b_hv trim0_hv trim[0] AGND level_shifter_up
-x6 AVDD enb_hv en_hv en AGND level_shifter_up
-x7 AVDD hyst1b_hv hyst1_hv hyst[1] AGND level_shifter_up
-x8 AVDD hyst0b_hv hyst0_hv hyst[0] AGND level_shifter_up
+x2 AVDD trim2b_hv trim2_hv trim[2] AGND DVDD level_shifter_up
+x4 AVDD trim1b_hv trim1_hv trim[1] AGND DVDD level_shifter_up
+x5 AVDD trim0b_hv trim0_hv trim[0] AGND DVDD level_shifter_up
+x6 AVDD enb_hv en_hv en AGND DVDD level_shifter_up
+x7 AVDD hyst1b_hv hyst1_hv hyst[1] AGND DVDD level_shifter_up
+x8 AVDD hyst0b_hv hyst0_hv hyst[0] AGND DVDD level_shifter_up
 XM32 Vdiff enb_hv AGND AGND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
 + nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4
@@ -300,7 +301,7 @@ XM93 Vfold_p net34 net29 AGND sky130_fd_pr__nfet_g5v0d10v5 L=1.5 W=8 nf=1 ad='in
 XM97 net29 casc_n net13 AGND sky130_fd_pr__nfet_g5v0d10v5 L=1 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
 + nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=6 m=6
-x1 AVDD trim3b_hv trim3_hv trim[3] AGND level_shifter_up
+x1 AVDD trim3b_hv trim3_hv trim[3] AGND DVDD level_shifter_up
 XM63 net21 bias_n net19 AGND sky130_fd_pr__nfet_g5v0d10v5 L=4 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
 + nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
@@ -486,8 +487,8 @@ XM137 net47 trim4b_hv res_p_bot AGND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=16 nf=
 XM136 res_p_top trim3b_hv net47 AGND sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=16 nf=4 ad='int((nf+1)/2) * W/nf * 0.29'
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
 + nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
-x3 AVDD trim4b_hv trim4_hv trim[4] AGND level_shifter_up
-x9 AVDD trim5b_hv trim5_hv trim[5] AGND level_shifter_up
+x3 AVDD trim4b_hv trim4_hv trim[4] AGND DVDD level_shifter_up
+x9 AVDD trim5b_hv trim5_hv trim[5] AGND DVDD level_shifter_up
 XM134 net56 casc_p net48 AVDD sky130_fd_pr__pfet_g5v0d10v5 L=1 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
 + nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=4 m=4
@@ -541,7 +542,6 @@ XM143 AVDD AVDD AVDD AVDD sky130_fd_pr__pfet_g5v0d10v5 L=1 W=2 nf=1 ad='int((nf+
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
 + nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=32 m=32
 XR3 AGND AGND AGND sky130_fd_pr__res_high_po_2p85 L=2.85*11.2 mult=1 m=1
-XR4 AVDD AVDD AGND sky130_fd_pr__res_high_po_2p85 L=2.85*11.2 mult=1 m=1
 XM144 casc_n casc_n casc_n AGND sky130_fd_pr__nfet_g5v0d10v5 L=1 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
 + nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=11 m=11
@@ -561,41 +561,37 @@ XM149 AVDD AVDD AVDD AVDD sky130_fd_pr__pfet_g5v0d10v5 L=4 W=2 nf=1 ad='int((nf+
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
 + nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=12 m=12
 XR5 AGND AGND AGND sky130_fd_pr__res_high_po_2p85 L=2.85*11.2 mult=1 m=1
-XR6 AVDD AVDD AGND sky130_fd_pr__res_high_po_2p85 L=2.85*11.2 mult=1 m=1
+XR7 AGND AGND AGND sky130_fd_pr__res_high_po_2p85 L=2.85*11.2 mult=1 m=1
+XR8 AGND AGND AGND sky130_fd_pr__res_high_po_2p85 L=2.85*11.2 mult=1 m=1
 .ends
 
 
-* expanding   symbol:  level_shifter_up.sym # of pins=5
+* expanding   symbol:  level_shifter_up.sym # of pins=6
 ** sym_path: /foss/designs/sky130_ak_ip__comparator/xschem/level_shifter_up.sym
 ** sch_path: /foss/designs/sky130_ak_ip__comparator/xschem/level_shifter_up.sch
-.subckt level_shifter_up VDD_HV xb_hv x_hv x_lv GND_HV
+.subckt level_shifter_up VDD_HV xb_hv x_hv x_lv GND_HV VDD_LV
 *.ipin VDD_HV
 *.ipin GND_HV
 *.ipin x_lv
 *.opin x_hv
 *.opin xb_hv
-XM65 xb_hv xbb GND_HV GND_HV sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
+*.ipin VDD_LV
+XM65 xb_hv x_lv GND_HV GND_HV sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
 + nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
-XM66 x_hv xb GND_HV GND_HV sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
+XM66 x_hv xb_lv GND_HV GND_HV sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
 + nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
-XM67 xb_hv x_hv VDD_HV VDD_HV sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
+XM67 xb_hv x_hv VDD_HV VDD_HV sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=0.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
 + nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
-XM68 x_hv xb_hv VDD_HV VDD_HV sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
+XM68 x_hv xb_hv VDD_HV VDD_HV sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=0.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
 + nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
-XM1 xb x_lv GND_HV GND_HV sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=3 nf=3 ad='int((nf+1)/2) * W/nf * 0.29'
+XM1 xb_lv x_lv GND_HV GND_HV sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
 + nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
-XM2 xbb xb GND_HV GND_HV sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
-+ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
-+ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
-XM3 xb x_lv VDD_HV VDD_HV sky130_fd_pr__pfet_g5v0d10v5 L=2 W=0.5 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
-+ as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
-+ nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
-XM4 xbb xb VDD_HV VDD_HV sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
+XM3 xb_lv x_lv VDD_LV VDD_LV sky130_fd_pr__pfet_g5v0d10v5 L=0.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29'
 + as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)' ps='2*int((nf+2)/2) * (W/nf + 0.29)'
 + nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
 .ends
