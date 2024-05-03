@@ -1,7 +1,9 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1713594760
+timestamp 1714698820
+<< dnwell >>
+rect 210 236 1028 1868
 << nwell >>
 rect 290 -1560 360 -1060
 rect 870 -1560 940 -1060
@@ -25,31 +27,32 @@ rect 290 1320 370 1700
 rect 520 1390 550 1620
 rect 600 1470 630 1700
 rect 680 1390 710 1620
-rect 500 320 570 1390
-rect 410 250 570 320
-rect 660 320 730 1390
+rect 500 1120 570 1390
+rect 410 1050 570 1120
+rect 660 1120 730 1390
 rect 870 1320 950 1700
-rect 660 250 820 320
-rect 290 -390 350 90
-rect 410 60 490 250
-rect 740 60 820 250
-rect 410 -120 470 60
-rect 410 -250 460 -120
-rect 520 -280 560 30
-rect 380 -290 570 -280
-rect 380 -350 390 -290
-rect 560 -350 570 -290
-rect 380 -360 570 -350
-rect 600 -390 630 -200
-rect 680 -280 720 30
-rect 760 -60 820 60
-rect 770 -250 820 -60
-rect 660 -290 850 -280
-rect 660 -350 670 -290
-rect 840 -350 850 -290
-rect 660 -360 850 -350
-rect 880 -390 940 90
-rect 290 -480 940 -390
+rect 660 1050 820 1120
+rect 290 410 350 890
+rect 410 860 490 1050
+rect 740 860 820 1050
+rect 410 680 470 860
+rect 410 550 460 680
+rect 520 520 560 830
+rect 380 510 570 520
+rect 380 450 390 510
+rect 560 450 570 510
+rect 380 440 570 450
+rect 600 410 630 600
+rect 680 520 720 830
+rect 760 740 820 860
+rect 770 550 820 740
+rect 660 510 850 520
+rect 660 450 670 510
+rect 840 450 850 510
+rect 660 440 850 450
+rect 880 410 940 890
+rect 290 308 940 410
+rect 290 -480 940 -382
 rect 290 -820 350 -480
 rect 530 -580 710 -480
 rect 750 -520 840 -510
@@ -74,23 +77,23 @@ rect 590 -1560 650 -1390
 rect 870 -1560 940 -1060
 rect 290 -1650 940 -1560
 << via1 >>
-rect 390 -350 560 -290
-rect 670 -350 840 -290
+rect 390 450 560 510
+rect 670 450 840 510
 rect 410 -1010 480 -740
 rect 760 -790 830 -520
 << metal2 >>
-rect 380 -290 570 -280
-rect 380 -350 390 -290
-rect 560 -350 570 -290
-rect 380 -360 570 -350
-rect 660 -290 850 -280
-rect 660 -350 670 -290
-rect 840 -350 850 -290
-rect 660 -360 850 -350
-rect 400 -740 490 -360
+rect 380 510 570 520
+rect 380 450 390 510
+rect 560 450 570 510
+rect 380 440 570 450
+rect 660 510 850 520
+rect 660 450 670 510
+rect 840 450 850 510
+rect 660 440 850 450
+rect 400 -740 490 440
 rect 400 -1010 410 -740
 rect 480 -1010 490 -740
-rect 750 -520 840 -360
+rect 750 -520 840 440
 rect 750 -790 760 -520
 rect 830 -790 840 -520
 rect 750 -800 840 -790
@@ -101,7 +104,7 @@ transform 0 1 618 -1 0 -648
 box -278 -358 278 358
 use sky130_fd_pr__nfet_g5v0d10v5_S48KL6  sky130_fd_pr__nfet_g5v0d10v5_S48KL6_0
 timestamp 1713585847
-transform 1 0 617 0 1 -142
+transform 1 0 617 0 1 658
 box -357 -358 357 358
 use sky130_fd_pr__pfet_g5v0d10v5_4V4BDM  sky130_fd_pr__pfet_g5v0d10v5_4V4BDM_0
 timestamp 1713594760
@@ -112,16 +115,18 @@ timestamp 1713585847
 transform 1 0 617 0 1 -1338
 box -387 -362 387 362
 << labels >>
-flabel metal1 580 -470 650 -400 0 FreeSans 320 0 0 0 GND_HV
-port 1 nsew
 flabel via1 760 -600 830 -530 0 FreeSans 320 0 0 0 x_lv
 port 2 nsew
-flabel metal1 420 250 490 320 0 FreeSans 320 0 0 0 x_hv
-port 3 nsew
-flabel metal1 740 250 810 320 0 FreeSans 320 0 0 0 xb_hv
-port 4 nsew
 flabel metal1 860 -1640 930 -1570 0 FreeSans 320 0 0 0 VDD_LV
 port 5 nsew
 flabel metal1 870 1710 940 1780 0 FreeSans 320 0 0 0 VDD_HV
 port 0 nsew
+flabel metal1 576 -466 646 -396 0 FreeSans 320 0 0 0 GND_LV
+port 6 nsew
+flabel metal1 740 1050 810 1120 0 FreeSans 320 0 0 0 xb_hv
+port 4 nsew
+flabel metal1 420 1050 490 1120 0 FreeSans 320 0 0 0 x_hv
+port 3 nsew
+flabel metal1 580 330 650 400 0 FreeSans 320 0 0 0 GND_HV
+port 1 nsew
 << end >>

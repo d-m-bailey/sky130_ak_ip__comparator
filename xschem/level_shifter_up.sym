@@ -1,4 +1,4 @@
-v {xschem version=3.1.0 file_version=1.2
+v {xschem version=3.4.5 file_version=1.2
 }
 G {}
 K {type=subcircuit
@@ -18,12 +18,14 @@ L 4 -150 40 -130 40 {}
 L 4 -130 -50 70 -50 {}
 L 4 -130 50 70 50 {}
 L 4 -150 -20 -130 -20 {}
+L 4 -150 20 -130 20 {}
 B 5 -152.5 -42.5 -147.5 -37.5 {name=VDD_HV dir=in }
 B 5 87.5 -42.5 92.5 -37.5 {name=xb_hv dir=out }
 B 5 87.5 -22.5 92.5 -17.5 {name=x_hv dir=out }
 B 5 -152.5 -2.5 -147.5 2.5 {name=x_lv dir=in }
 B 5 -152.5 37.5 -147.5 42.5 {name=GND_HV dir=in }
 B 5 -152.5 -22.5 -147.5 -17.5 {name=VDD_LV dir=in }
+B 5 -152.5 17.5 -147.5 22.5 {name=GND_LV dir=in }
 T {level_shifter_up} -60 24 0 0 0.3 0.3 {}
 T {@name} 75 -62 0 0 0.2 0.2 {}
 T {VDD_HV} -125 -44 0 0 0.2 0.2 {}
@@ -32,3 +34,4 @@ T {x_hv} 65 -24 0 1 0.2 0.2 {}
 T {x_lv} -125 -4 0 0 0.2 0.2 {}
 T {GND_HV} -125 36 0 0 0.2 0.2 {}
 T {VDD_LV} -125 -24 0 0 0.2 0.2 {}
+T {GND_LV} -125 16 0 0 0.2 0.2 {}

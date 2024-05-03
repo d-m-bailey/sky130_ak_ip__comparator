@@ -1,4 +1,4 @@
-v {xschem version=3.1.0 file_version=1.2
+v {xschem version=3.4.5 file_version=1.2
 }
 G {}
 K {}
@@ -286,8 +286,6 @@ N 3700 -580 3700 -490 {
 lab=DVDD}
 N 3500 -400 3600 -400 {
 lab=Vout_int}
-N 3660 -160 3720 -160 {
-lab=AGND}
 N 3680 -580 3740 -580 {
 lab=DVDD}
 N 20 920 1830 920 {
@@ -416,8 +414,6 @@ N 2320 150 3540 150 {
 lab=AVDD}
 N 170 790 260 790 {
 lab=bias_n}
-N 2380 -160 3500 -160 {
-lab=AGND}
 N 2630 840 2640 840 {
 lab=hyst1_hv}
 N 320 -130 1940 -130 {
@@ -478,8 +474,6 @@ N 3250 -220 3290 -220 {
 lab=enb_hv}
 N 3080 -580 3680 -580 {
 lab=DVDD}
-N 3500 -160 3660 -160 {
-lab=AGND}
 N 3080 -380 3440 -380 {
 lab=Vdiff}
 N 3330 -190 3330 -160 {
@@ -1460,14 +1454,10 @@ N 3820 -490 3860 -490 {
 lab=DVDD}
 N 3860 -580 3860 -490 {
 lab=DVDD}
-N 3820 -160 3880 -160 {
-lab=AGND}
 N 3840 -580 3900 -580 {
 lab=DVDD}
 N 3740 -580 3840 -580 {
 lab=DVDD}
-N 3720 -160 3820 -160 {
-lab=AGND}
 N 3660 -400 3760 -400 {
 lab=Voutb}
 N 1080 -1300 1080 -1240 {
@@ -1680,8 +1670,6 @@ N 1950 -1310 1970 -1310 {
 lab=AGND}
 N 5650 630 5680 630 {
 lab=AGND}
-N 760 1470 800 1470 {
-lab=AGND}
 N 4160 400 4190 400 {
 lab=AGND}
 N 2180 -1420 2180 -1380 {
@@ -1704,6 +1692,8 @@ N 1950 -1520 1950 -1380 {
 lab=AGND}
 N 1950 -1450 1970 -1450 {
 lab=AGND}
+N 2380 -160 2700 -160 {}
+N 2920 -160 3860 -160 {}
 C {devices/ipin.sym} -410 -310 0 0 {name=p1 lab=Vinp}
 C {devices/ipin.sym} -410 -270 0 0 {name=p2 lab=Vinm}
 C {devices/ipin.sym} -410 -460 0 0 {name=p3 lab=AVDD}
@@ -1713,7 +1703,7 @@ C {devices/ipin.sym} -410 -150 0 0 {name=p6 lab=hyst[1:0]}
 C {devices/ipin.sym} -410 -110 0 0 {name=p7 lab=trim[5:0]}
 C {devices/lab_pin.sym} 320 -130 0 0 {name=p8 sig_type=std_logic lab=AGND}
 C {devices/opin.sym} -350 -290 0 0 {name=p10 lab=Vout}
-C {devices/ipin.sym} -410 -500 0 0 {name=p11 lab=DVDD}
+C {devices/ipin.sym} -410 -500 0 0 {name=p11 lab=DGND}
 C {devices/lab_pin.sym} 1030 -210 0 0 {name=p16 sig_type=std_logic lab=bias_n}
 C {devices/ipin.sym} -410 -70 0 0 {name=p17 lab=ibias}
 C {devices/lab_pin.sym} 20 920 0 0 {name=p18 sig_type=std_logic lab=AGND}
@@ -4053,3 +4043,6 @@ mult=1}
 C {devices/lab_pin.sym} 3500 -360 2 0 {name=p76 sig_type=std_logic lab=Vout_int}
 C {devices/lab_pin.sym} 3660 -360 2 0 {name=p78 sig_type=std_logic lab=Voutb}
 C {devices/lab_pin.sym} 840 1440 1 0 {name=p60 sig_type=std_logic lab=DVDD}
+C {devices/lab_pin.sym} 800 1440 1 0 {name=p63 sig_type=std_logic lab=DGND}
+C {devices/lab_pin.sym} 2920 -160 0 0 {name=p104 sig_type=std_logic lab=DGND}
+C {devices/ipin.sym} -410 -540 0 0 {name=p225 lab=DVDD}

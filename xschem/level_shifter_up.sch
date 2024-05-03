@@ -1,4 +1,4 @@
-v {xschem version=3.1.0 file_version=1.2
+v {xschem version=3.4.5 file_version=1.2
 }
 G {}
 K {}
@@ -153,7 +153,7 @@ C {devices/opin.sym} 150 -180 0 1 {name=p3 lab=xb_hv}
 C {devices/lab_pin.sym} 400 -120 0 1 {name=p7 sig_type=std_logic lab=xb_lv}
 C {devices/lab_pin.sym} 1120 -250 0 1 {name=p9 sig_type=std_logic lab=xb_lv
 }
-C {devices/lab_pin.sym} 960 -30 0 0 {name=p6 sig_type=std_logic lab=GND_HV}
+C {devices/lab_pin.sym} 960 -30 0 0 {name=p6 sig_type=std_logic lab=GND_LV}
 C {devices/lab_pin.sym} 110 -120 0 0 {name=p5 sig_type=std_logic lab=x_lv}
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 1050 -120 0 0 {name=M1
 L=0.5
