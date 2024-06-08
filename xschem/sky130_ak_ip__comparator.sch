@@ -183,13 +183,13 @@ lab=AGND}
 N 2380 -340 2380 -160 {
 lab=AGND}
 N 2920 -220 2920 -160 {
-lab=AGND}
+lab=DGND}
 N 3080 -220 3080 -160 {
-lab=AGND}
+lab=DGND}
 N 2920 -250 3080 -250 {
-lab=AGND}
+lab=DGND}
 N 3000 -250 3000 -160 {
-lab=AGND}
+lab=DGND}
 N 2860 -250 2880 -250 {
 lab=Vom_stg2}
 N 3120 -250 3140 -250 {
@@ -221,7 +221,7 @@ lab=#net3}
 N 2980 -490 2980 -440 {
 lab=#net3}
 N 3500 -220 3500 -160 {
-lab=AGND}
+lab=DGND}
 N 3500 -460 3500 -280 {
 lab=Vout_int}
 N 3500 -580 3500 -520 {
@@ -233,9 +233,9 @@ lab=Vdiff}
 N 3440 -250 3460 -250 {
 lab=Vdiff}
 N 3500 -250 3540 -250 {
-lab=AGND}
+lab=DGND}
 N 3540 -250 3540 -160 {
-lab=AGND}
+lab=DGND}
 N 3500 -490 3540 -490 {
 lab=DVDD}
 N 3540 -580 3540 -490 {
@@ -265,7 +265,7 @@ lab=Vout_int}
 N 2900 520 2930 520 {
 lab=Voutb}
 N 3660 -220 3660 -160 {
-lab=AGND}
+lab=DGND}
 N 3660 -460 3660 -280 {
 lab=Voutb}
 N 3660 -580 3660 -520 {
@@ -277,9 +277,9 @@ lab=Vout_int}
 N 3600 -250 3620 -250 {
 lab=Vout_int}
 N 3660 -250 3700 -250 {
-lab=AGND}
+lab=DGND}
 N 3700 -250 3700 -160 {
-lab=AGND}
+lab=DGND}
 N 3660 -490 3700 -490 {
 lab=DVDD}
 N 3700 -580 3700 -490 {
@@ -329,23 +329,23 @@ lab=bias_p}
 N 700 390 720 390 {
 lab=bias_p}
 N 800 1440 800 2500 {
-lab=AGND}
+lab=DGND}
 N 840 1440 840 2500 {
 lab=DVDD}
 N 880 1440 880 2500 {
 lab=AVDD}
 N 800 1910 920 1910 {
-lab=AGND}
+lab=DGND}
 N 800 2020 920 2020 {
-lab=AGND}
+lab=DGND}
 N 800 2130 920 2130 {
-lab=AGND}
+lab=DGND}
 N 800 2240 920 2240 {
-lab=AGND}
+lab=DGND}
 N 800 2350 920 2350 {
-lab=AGND}
+lab=DGND}
 N 800 2460 920 2460 {
-lab=AGND}
+lab=DGND}
 N 880 1850 920 1850 {
 lab=AVDD}
 N 880 1960 920 1960 {
@@ -469,7 +469,7 @@ lab=AVDD}
 N 840 330 860 330 {
 lab=en_hv}
 N 3330 -220 3370 -220 {
-lab=AGND}
+lab=DGND}
 N 3250 -220 3290 -220 {
 lab=enb_hv}
 N 3080 -580 3680 -580 {
@@ -477,9 +477,9 @@ lab=DVDD}
 N 3080 -380 3440 -380 {
 lab=Vdiff}
 N 3330 -190 3330 -160 {
-lab=AGND}
+lab=DGND}
 N 3370 -220 3370 -160 {
-lab=AGND}
+lab=DGND}
 N 3330 -380 3330 -250 {
 lab=Vdiff}
 N 600 790 620 790 {
@@ -715,7 +715,7 @@ lab=Vfold_m}
 N 2860 450 2860 490 {
 lab=Vfold_p}
 N 800 1800 920 1800 {
-lab=AGND}
+lab=DGND}
 N 880 1740 920 1740 {
 lab=AVDD}
 N 840 1760 920 1760 {
@@ -1299,7 +1299,7 @@ lab=#net47}
 N 5820 500 5820 540 {
 lab=res_p_top}
 N 800 1690 920 1690 {
-lab=AGND}
+lab=DGND}
 N 880 1630 920 1630 {
 lab=AVDD}
 N 840 1650 920 1650 {
@@ -1313,7 +1313,7 @@ lab=AGND}
 N 700 1670 920 1670 {
 lab=trim[4]}
 N 800 1580 920 1580 {
-lab=AGND}
+lab=DGND}
 N 880 1520 920 1520 {
 lab=AVDD}
 N 840 1540 920 1540 {
@@ -1435,7 +1435,7 @@ lab=bias_var_tailp}
 N 2880 1520 2880 1580 {
 lab=bias_var_tailp}
 N 3820 -220 3820 -160 {
-lab=AGND}
+lab=DGND}
 N 3820 -460 3820 -280 {
 lab=Vout}
 N 3820 -580 3820 -520 {
@@ -1447,9 +1447,9 @@ lab=Voutb}
 N 3760 -250 3780 -250 {
 lab=Voutb}
 N 3820 -250 3860 -250 {
-lab=AGND}
+lab=DGND}
 N 3860 -250 3860 -160 {
-lab=AGND}
+lab=DGND}
 N 3820 -490 3860 -490 {
 lab=DVDD}
 N 3860 -580 3860 -490 {
@@ -1692,8 +1692,26 @@ N 1950 -1520 1950 -1380 {
 lab=AGND}
 N 1950 -1450 1970 -1450 {
 lab=AGND}
-N 2380 -160 2700 -160 {}
-N 2920 -160 3860 -160 {}
+N 2380 -160 2700 -160 {
+lab=AGND}
+N 2920 -160 3860 -160 {
+lab=DGND}
+N 1200 1650 1380 1650 {
+lab=trim4_hv}
+N 1210 1650 1210 1670 {
+lab=trim4_hv}
+N 1200 1760 1380 1760 {
+lab=trim3_hv}
+N 1210 1760 1210 1780 {
+lab=trim3_hv}
+N 1200 1960 1390 1960 {
+lab=trim1b_hv}
+N 1200 2070 1400 2070 {
+lab=trim0b_hv}
+N 1200 2040 1200 2070 {
+lab=trim0b_hv}
+N 1200 1930 1200 1960 {
+lab=trim1b_hv}
 C {devices/ipin.sym} -410 -310 0 0 {name=p1 lab=Vinp}
 C {devices/ipin.sym} -410 -270 0 0 {name=p2 lab=Vinm}
 C {devices/ipin.sym} -410 -460 0 0 {name=p3 lab=AVDD}
@@ -2165,9 +2183,9 @@ C {devices/lab_pin.sym} 700 2330 0 0 {name=p116 sig_type=std_logic lab=hyst[1]}
 C {devices/lab_pin.sym} 1200 1870 0 1 {name=p126 sig_type=std_logic lab=trim2_hv}
 C {devices/lab_pin.sym} 1200 1850 0 1 {name=p130 sig_type=std_logic lab=trim2b_hv}
 C {devices/lab_pin.sym} 1200 1980 0 1 {name=p131 sig_type=std_logic lab=trim1_hv}
-C {devices/lab_pin.sym} 1200 1960 0 1 {name=p132 sig_type=std_logic lab=trim1b_hv}
+C {devices/lab_pin.sym} 1200 1930 0 1 {name=p132 sig_type=std_logic lab=trim1b_hv}
 C {devices/lab_pin.sym} 1200 2090 0 1 {name=p133 sig_type=std_logic lab=trim0_hv}
-C {devices/lab_pin.sym} 1200 2070 0 1 {name=p134 sig_type=std_logic lab=trim0b_hv}
+C {devices/lab_pin.sym} 1200 2040 0 1 {name=p134 sig_type=std_logic lab=trim0b_hv}
 C {devices/lab_pin.sym} 1200 2200 0 1 {name=p67 sig_type=std_logic lab=en_hv}
 C {devices/lab_pin.sym} 1200 2180 0 1 {name=p70 sig_type=std_logic lab=enb_hv}
 C {devices/lab_pin.sym} 1200 2310 0 1 {name=p71 sig_type=std_logic lab=hyst1_hv}
@@ -2732,7 +2750,7 @@ C {devices/lab_pin.sym} 4880 740 2 1 {name=p151 sig_type=std_logic lab=casc_n}
 C {devices/lab_pin.sym} 4950 530 1 0 {name=p152 sig_type=std_logic lab=AGND}
 C {devices/lab_pin.sym} 5030 470 1 0 {name=p153 sig_type=std_logic lab=Vfold_m}
 C {devices/lab_pin.sym} 4870 470 1 0 {name=p154 sig_type=std_logic lab=Vfold_p}
-C {devices/lab_pin.sym} 1200 1760 0 1 {name=p114 sig_type=std_logic lab=trim3_hv}
+C {devices/lab_pin.sym} 1210 1780 0 1 {name=p114 sig_type=std_logic lab=trim3_hv}
 C {devices/lab_pin.sym} 1200 1740 0 1 {name=p115 sig_type=std_logic lab=trim3b_hv}
 C {level_shifter_up.sym} 1070 1780 0 0 {name=x1}
 C {devices/lab_pin.sym} 1020 -770 2 1 {name=p100 sig_type=std_logic lab=bias_var_tailp}
@@ -3681,7 +3699,7 @@ C {devices/lab_pin.sym} 5860 690 0 1 {name=p177 sig_type=std_logic lab=trim4b_hv
 C {devices/lab_pin.sym} 6290 240 2 1 {name=p190 sig_type=std_logic lab=bias_var_tailp}
 C {devices/lab_pin.sym} 4880 820 2 1 {name=p162 sig_type=std_logic lab=bias_var_tailn}
 C {devices/lab_pin.sym} 700 1670 0 0 {name=p14 sig_type=std_logic lab=trim[4]}
-C {devices/lab_pin.sym} 1200 1650 0 1 {name=p191 sig_type=std_logic lab=trim4_hv}
+C {devices/lab_pin.sym} 1210 1670 0 1 {name=p191 sig_type=std_logic lab=trim4_hv}
 C {devices/lab_pin.sym} 1200 1630 0 1 {name=p208 sig_type=std_logic lab=trim4b_hv}
 C {level_shifter_up.sym} 1070 1670 0 0 {name=x3}
 C {devices/lab_pin.sym} 700 1560 0 0 {name=p209 sig_type=std_logic lab=trim[5]}
@@ -4046,3 +4064,7 @@ C {devices/lab_pin.sym} 840 1440 1 0 {name=p60 sig_type=std_logic lab=DVDD}
 C {devices/lab_pin.sym} 800 1440 1 0 {name=p63 sig_type=std_logic lab=DGND}
 C {devices/lab_pin.sym} 2920 -160 0 0 {name=p104 sig_type=std_logic lab=DGND}
 C {devices/ipin.sym} -410 -540 0 0 {name=p225 lab=DVDD}
+C {devices/noconn.sym} 1400 2070 0 1 {name=l1}
+C {devices/noconn.sym} 1390 1960 0 1 {name=l2}
+C {devices/noconn.sym} 1380 1760 0 1 {name=l3}
+C {devices/noconn.sym} 1380 1650 0 1 {name=l4}
