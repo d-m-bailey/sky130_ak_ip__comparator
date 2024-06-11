@@ -98,19 +98,19 @@ rect 750 -790 760 -520
 rect 830 -790 840 -520
 rect 750 -800 840 -790
 rect 400 -1020 490 -1010
-use sky130_fd_pr__nfet_g5v0d10v5_C5EREZ  sky130_fd_pr__nfet_g5v0d10v5_C5EREZ_0
+use sky130_fd_pr__nfet_g5v0d10v5_C5EREZ  sky130_fd_pr__nfet_g5v0d10v5_C5EREZ_0 paramcells
 timestamp 1713585847
 transform 0 1 618 -1 0 -648
 box -278 -358 278 358
-use sky130_fd_pr__nfet_g5v0d10v5_S48KL6  sky130_fd_pr__nfet_g5v0d10v5_S48KL6_0
+use sky130_fd_pr__nfet_g5v0d10v5_S48KL6  sky130_fd_pr__nfet_g5v0d10v5_S48KL6_0 paramcells
 timestamp 1713585847
 transform 1 0 617 0 1 658
 box -357 -358 357 358
-use sky130_fd_pr__pfet_g5v0d10v5_4V4BDM  sky130_fd_pr__pfet_g5v0d10v5_4V4BDM_0
+use sky130_fd_pr__pfet_g5v0d10v5_4V4BDM  sky130_fd_pr__pfet_g5v0d10v5_4V4BDM_0 paramcells
 timestamp 1713594760
 transform 1 0 619 0 1 1495
 box -387 -347 387 347
-use sky130_fd_pr__pfet_g5v0d10v5_8T5BGA  sky130_fd_pr__pfet_g5v0d10v5_8T5BGA_0
+use sky130_fd_pr__pfet_g5v0d10v5_8T5BGA  sky130_fd_pr__pfet_g5v0d10v5_8T5BGA_0 paramcells
 timestamp 1713585847
 transform 1 0 617 0 1 -1338
 box -387 -362 387 362

@@ -16,4 +16,3 @@ readnet spice ../netlist/schematic/sky130_ak_ip__comparator.spice $circuit2
 
 lvs "$circuit1 sky130_ak_ip__comparator" "$circuit2 sky130_ak_ip__comparator" \
         $setupfile sky130_ak_ip__comparator_comp.out
-~                                                    
