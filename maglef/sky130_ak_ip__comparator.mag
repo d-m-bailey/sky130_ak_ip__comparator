@@ -1,0 +1,109 @@
+magic
+tech sky130A
+timestamp 1723825903
+<< nwell >>
+rect -720 -16640 19660 6640
+<< locali >>
+rect -950 6848 19850 6850
+rect -950 -16848 -948 6848
+rect 19848 -16848 19850 6848
+rect -950 -16850 19850 -16848
+<< obsli1 >>
+rect -948 -16848 19848 6848
+<< metal1 >>
+rect -950 6848 19850 6850
+rect -950 -16848 -948 6848
+rect 19848 -16848 19850 6848
+rect -950 -16850 19850 -16848
+<< obsm1 >>
+rect -948 -16848 19848 6848
+<< metal2 >>
+rect 15700 6655 15745 6700
+rect 16100 6655 16145 6700
+rect 16500 6655 16545 6700
+rect 16560 -16760 16610 -16710
+rect 17060 -16760 17110 -16710
+rect 17560 -16760 17610 -16710
+rect 18060 -16760 18110 -16710
+rect 18560 -16760 18610 -16710
+rect 19060 -16760 19110 -16710
+<< obsm2 >>
+rect -180 -16710 19654 6655
+<< metal3 >>
+rect -870 1200 -800 1270
+rect 19700 5410 19750 5460
+<< obsm3 >>
+rect -800 -16460 19700 6280
+<< metal4 >>
+rect 14540 6660 14630 6750
+rect 19630 6150 19740 6260
+rect 15470 -16750 15570 -16670
+<< obsm4 >>
+rect -130 6750 19760 6760
+rect -130 6660 14540 6750
+rect 14630 6660 19760 6750
+rect -130 6260 19760 6660
+rect -130 6150 19630 6260
+rect 19740 6150 19760 6260
+rect -130 -16670 19760 6150
+rect -130 -16750 15470 -16670
+rect 15570 -16750 19760 -16670
+rect -130 -16760 19760 -16750
+<< labels >>
+rlabel metal3 s -790 -3070 -690 -2970 2 Vinp
+port 1 nsew
+rlabel metal3 s -790 -3490 -690 -3390 2 Vinm
+port 2 nsew
+rlabel metal4 s 15470 -16750 15570 -16670 8 AVDD
+port 3 nsew
+rlabel metal4 s 14540 6660 14630 6750 6 AGND
+port 4 nsew
+rlabel metal2 s 18060 -16760 18110 -16710 8 en
+port 5 nsew
+rlabel metal2 s 18560 -16760 18610 -16710 8 hyst[1]
+port 6 nsew
+rlabel metal2 s 19060 -16760 19110 -16710 8 hyst[0]
+port 7 nsew
+rlabel metal2 s 16560 -16760 16610 -16710 8 trim[5]
+port 8 nsew
+rlabel metal2 s 17060 -16760 17110 -16710 8 trim[4]
+port 9 nsew
+rlabel metal2 s 17560 -16760 17610 -16710 8 trim[3]
+port 10 nsew
+rlabel metal2 s 15700 6655 15745 6700 6 trim[2]
+port 11 nsew
+rlabel metal2 s 16100 6655 16145 6700 6 trim[1]
+port 12 nsew
+rlabel metal2 s 16500 6655 16545 6700 6 trim[0]
+port 13 nsew
+rlabel metal3 s 19700 5410 19750 5460 6 Vout
+port 14 nsew
+rlabel metal4 s 19630 6150 19740 6260 6 DVDD
+port 15 nsew
+rlabel metal3 s -870 1200 -800 1270 4 ibias
+port 16 nsew
+rlabel metal1 s -950 -16850 19850 -16848 8 DGND
+port 17 nsew
+rlabel metal1 s 19848 -16848 19850 6848 8 DGND
+port 17 nsew
+rlabel metal1 s 19462 -15981 19715 -15735 8 DGND
+port 17 nsew
+rlabel metal1 s -950 -16848 -948 6848 2 DGND
+port 17 nsew
+rlabel metal1 s -950 6848 19850 6850 6 DGND
+port 17 nsew
+rlabel locali s -950 -16850 19850 -16848 8 DGND
+port 17 nsew
+rlabel locali s 19848 -16848 19850 6848 8 DGND
+port 17 nsew
+rlabel locali s -950 -16848 -948 6848 2 DGND
+port 17 nsew
+rlabel locali s -950 6848 19850 6850 6 DGND
+port 17 nsew
+<< properties >>
+string FIXED_BBOX -950 -16850 19850 6850
+string LEFclass BLOCK
+string LEFview TRUE
+string GDS_FILE ../gds/sky130_ak_ip__comparator.gds.gz
+string GDS_START 0
+<< end >>

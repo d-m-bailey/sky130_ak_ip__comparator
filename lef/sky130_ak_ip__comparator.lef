@@ -1,0 +1,157 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO sky130_ak_ip__comparator
+  CLASS BLOCK ;
+  FOREIGN sky130_ak_ip__comparator ;
+  ORIGIN 9.500 168.500 ;
+  SIZE 208.000 BY 237.000 ;
+  PIN Vinp
+    ANTENNAGATEAREA 684.000000 ;
+    PORT
+      LAYER met3 ;
+        RECT -7.900 -30.700 -6.900 -29.700 ;
+    END
+  END Vinp
+  PIN Vinm
+    ANTENNAGATEAREA 684.000000 ;
+    PORT
+      LAYER met3 ;
+        RECT -7.900 -34.900 -6.900 -33.900 ;
+    END
+  END Vinm
+  PIN AVDD
+    ANTENNAGATEAREA 848.000000 ;
+    ANTENNADIFFAREA 3786.641846 ;
+    PORT
+      LAYER met4 ;
+        RECT 154.700 -167.500 155.700 -166.700 ;
+    END
+  END AVDD
+  PIN AGND
+    ANTENNAGATEAREA 556.000000 ;
+    ANTENNADIFFAREA 2354.381104 ;
+    PORT
+      LAYER met4 ;
+        RECT 145.400 66.600 146.300 67.500 ;
+    END
+  END AGND
+  PIN en
+    ANTENNAGATEAREA 2.000000 ;
+    PORT
+      LAYER met2 ;
+        RECT 180.600 -167.600 181.100 -167.100 ;
+    END
+  END en
+  PIN hyst[1]
+    ANTENNAGATEAREA 2.000000 ;
+    PORT
+      LAYER met2 ;
+        RECT 185.600 -167.600 186.100 -167.100 ;
+    END
+  END hyst[1]
+  PIN hyst[0]
+    ANTENNAGATEAREA 2.000000 ;
+    PORT
+      LAYER met2 ;
+        RECT 190.600 -167.600 191.100 -167.100 ;
+    END
+  END hyst[0]
+  PIN trim[5]
+    ANTENNAGATEAREA 2.000000 ;
+    PORT
+      LAYER met2 ;
+        RECT 165.600 -167.600 166.100 -167.100 ;
+    END
+  END trim[5]
+  PIN trim[4]
+    ANTENNAGATEAREA 2.000000 ;
+    PORT
+      LAYER met2 ;
+        RECT 170.600 -167.600 171.100 -167.100 ;
+    END
+  END trim[4]
+  PIN trim[3]
+    ANTENNAGATEAREA 2.000000 ;
+    PORT
+      LAYER met2 ;
+        RECT 175.600 -167.600 176.100 -167.100 ;
+    END
+  END trim[3]
+  PIN trim[2]
+    ANTENNAGATEAREA 2.000000 ;
+    PORT
+      LAYER met2 ;
+        RECT 157.000 66.550 157.450 67.000 ;
+    END
+  END trim[2]
+  PIN trim[1]
+    ANTENNAGATEAREA 2.000000 ;
+    PORT
+      LAYER met2 ;
+        RECT 161.000 66.550 161.450 67.000 ;
+    END
+  END trim[1]
+  PIN trim[0]
+    ANTENNAGATEAREA 2.000000 ;
+    PORT
+      LAYER met2 ;
+        RECT 165.000 66.550 165.450 67.000 ;
+    END
+  END trim[0]
+  PIN Vout
+    ANTENNADIFFAREA 0.870000 ;
+    PORT
+      LAYER met3 ;
+        RECT 197.000 54.100 197.500 54.600 ;
+    END
+  END Vout
+  PIN DVDD
+    ANTENNADIFFAREA 49.892998 ;
+    PORT
+      LAYER met4 ;
+        RECT 196.300 61.500 197.400 62.600 ;
+    END
+  END DVDD
+  PIN ibias
+    ANTENNAGATEAREA 36.000000 ;
+    ANTENNADIFFAREA 0.580000 ;
+    PORT
+      LAYER met3 ;
+        RECT -8.700 12.000 -8.000 12.700 ;
+    END
+  END ibias
+  PIN DGND
+    ANTENNADIFFAREA 203.509598 ;
+    PORT
+      LAYER li1 ;
+        RECT -9.500 68.480 198.500 68.500 ;
+        RECT -9.500 -168.480 -9.480 68.480 ;
+        RECT 198.480 -168.480 198.500 68.480 ;
+        RECT -9.500 -168.500 198.500 -168.480 ;
+      LAYER met1 ;
+        RECT -9.500 68.480 198.500 68.500 ;
+        RECT -9.500 -168.480 -9.480 68.480 ;
+        RECT 194.620 -159.810 197.150 -157.350 ;
+        RECT 198.480 -168.480 198.500 68.480 ;
+        RECT -9.500 -168.500 198.500 -168.480 ;
+    END
+  END DGND
+  OBS
+      LAYER nwell ;
+        RECT -7.200 -166.400 196.600 66.400 ;
+      LAYER li1 ;
+        RECT -9.480 -168.480 198.480 68.480 ;
+      LAYER met1 ;
+        RECT -9.480 -168.480 198.480 68.480 ;
+      LAYER met2 ;
+        RECT -1.800 -167.100 196.540 66.550 ;
+      LAYER met3 ;
+        RECT -8.000 -164.600 197.000 62.800 ;
+      LAYER met4 ;
+        RECT -1.300 -167.600 197.600 67.600 ;
+  END
+END sky130_ak_ip__comparator
+END LIBRARY
+
