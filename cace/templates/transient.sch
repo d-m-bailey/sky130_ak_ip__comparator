@@ -123,7 +123,7 @@ C {devices/lab_wire.sym} 50 -90 0 0 {name=p12 sig_type=std_logic lab=AVDD}
 C {devices/lab_wire.sym} 420 290 2 1 {name=p14 sig_type=std_logic lab=VSS}
 C {sky130_ak_ip__comparator.sym} 730 180 0 0 {name=x2}
 C {devices/vcvs.sym} 880 390 0 1 {name=Evdrv1 value=1}
-C {devices/vsource.sym} 210 110 0 0 {name=V3 value="DC 0 PWL(0 0 100n 0 100.1n CACE\{vdd\})" savecurrent=false}
+C {devices/vsource.sym} 210 110 0 0 {name=V3 value="DC 0 PWL(0 0 100n 0 100.1n CACE\{avdd\})" savecurrent=false}
 C {devices/gnd.sym} 900 520 0 0 {name=l4 lab=GND}
 C {devices/lab_wire.sym} 210 40 0 0 {name=p15 sig_type=std_logic lab=Vp}
 C {devices/gnd.sym} 210 180 0 0 {name=l5 lab=GND}
@@ -144,33 +144,33 @@ value="
 "}
 C {devices/vsource.sym} -60 -20 0 0 {name=V1 value=CACE\{dvdd\} savecurrent=false}
 C {devices/lab_wire.sym} -60 -140 0 0 {name=p1 sig_type=std_logic lab=DVDD}
-C {devices/vsource.sym} -140 360 0 0 {name=V4 value=CACE[CACE\{hyst1\}*CACE\{dvdd\}] savecurrent=false}
+C {devices/vsource.sym} -140 360 0 0 {name=V4 value=CACE[CACE\{hyst[1]\}*CACE\{dvdd\}] savecurrent=false}
 C {devices/lab_pin.sym} 480 190 0 0 {name=p2 sig_type=std_logic lab=hyst[1:0]}
 C {devices/lab_pin.sym} 480 210 0 0 {name=p3 sig_type=std_logic lab=trim[5:0]}
 C {devices/gnd.sym} -140 390 0 0 {name=l1 lab=GND}
 C {devices/lab_pin.sym} -140 300 0 1 {name=p4 sig_type=std_logic lab=hyst[1]}
-C {devices/vsource.sym} -140 490 0 0 {name=V5 value=CACE[CACE\{hyst0\}*CACE\{dvdd\}] savecurrent=false}
+C {devices/vsource.sym} -140 490 0 0 {name=V5 value=CACE[CACE\{hyst[0]\}*CACE\{dvdd\}] savecurrent=false}
 C {devices/gnd.sym} -140 520 0 0 {name=l6 lab=GND}
 C {devices/lab_pin.sym} -140 430 0 1 {name=p5 sig_type=std_logic lab=hyst[0]}
-C {devices/vsource.sym} -400 350 0 0 {name=V6 value=CACE[CACE\{trim1\}*CACE\{dvdd\}] savecurrent=false}
+C {devices/vsource.sym} -400 350 0 0 {name=V6 value=CACE[CACE\{trim[1]\}*CACE\{dvdd\}] savecurrent=false}
 C {devices/gnd.sym} -400 380 0 0 {name=l7 lab=GND}
 C {devices/lab_pin.sym} -400 290 0 1 {name=p7 sig_type=std_logic lab=trim[1]}
-C {devices/vsource.sym} -400 480 0 0 {name=V7 value=CACE[CACE\{trim0\}*CACE\{dvdd\}] savecurrent=false}
+C {devices/vsource.sym} -400 480 0 0 {name=V7 value=CACE[CACE\{trim[0]\}*CACE\{dvdd\}] savecurrent=false}
 C {devices/gnd.sym} -400 510 0 0 {name=l8 lab=GND}
 C {devices/lab_pin.sym} -400 420 0 1 {name=p11 sig_type=std_logic lab=trim[0]}
-C {devices/vsource.sym} -400 210 0 0 {name=V8 value=CACE[CACE\{trim2\}*CACE\{dvdd\}] savecurrent=false}
+C {devices/vsource.sym} -400 210 0 0 {name=V8 value=CACE[CACE\{trim[2]\}*CACE\{dvdd\}] savecurrent=false}
 C {devices/gnd.sym} -400 240 0 0 {name=l9 lab=GND
-value=CACE[CACE\{trim2\}*CACE\{dvdd\}]}
+value=CACE[CACE\{trim[2]\}*CACE\{dvdd\}]}
 C {devices/lab_pin.sym} -400 150 0 1 {name=p13 sig_type=std_logic lab=trim[2]}
-C {devices/vsource.sym} -400 80 0 0 {name=V9 value=CACE[CACE\{trim3\}*CACE\{dvdd\}] savecurrent=false}
+C {devices/vsource.sym} -400 80 0 0 {name=V9 value=CACE[CACE\{trim[3]\}*CACE\{dvdd\}] savecurrent=false}
 C {devices/gnd.sym} -400 110 0 0 {name=l10 lab=GND
-value=CACE[CACE\{trim2\}*CACE\{dvdd\}]}
+value=CACE[CACE\{trim[2]\}*CACE\{dvdd\}]}
 C {devices/lab_pin.sym} -400 20 0 1 {name=p16 sig_type=std_logic lab=trim[3]}
-C {devices/vsource.sym} -400 -60 0 0 {name=V10 value=CACE[CACE\{trim4\}*CACE\{dvdd\}] savecurrent=false}
+C {devices/vsource.sym} -400 -60 0 0 {name=V10 value=CACE[CACE\{trim[4]\}*CACE\{dvdd\}] savecurrent=false}
 C {devices/gnd.sym} -400 -30 0 0 {name=l11 lab=GND
-value=CACE[CACE\{trim2\}*CACE\{dvdd\}]}
+value=CACE[CACE\{trim[2]\}*CACE\{dvdd\}]}
 C {devices/lab_pin.sym} -400 -120 0 1 {name=p17 sig_type=std_logic lab=trim[4]}
-C {devices/vsource.sym} -400 -200 0 0 {name=V11 value=CACE[CACE\{trim5\}*CACE\{dvdd\}] savecurrent=false}
+C {devices/vsource.sym} -400 -200 0 0 {name=V11 value=CACE[CACE\{trim[5]\}*CACE\{dvdd\}] savecurrent=false}
 C {devices/gnd.sym} -400 -170 0 0 {name=l12 lab=GND
-value=CACE[CACE\{trim2\}*CACE\{dvdd\}]}
+value=CACE[CACE\{trim[2]\}*CACE\{dvdd\}]}
 C {devices/lab_pin.sym} -400 -260 0 1 {name=p18 sig_type=std_logic lab=trim[5]}

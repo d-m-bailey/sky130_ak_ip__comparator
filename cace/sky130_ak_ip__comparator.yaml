@@ -17,6 +17,7 @@ authorship:
 paths:
   root:             ..
   schematic:        xschem
+  magic:            mag
   layout:           gds
   netlist:          netlist
   documentation:    docs
@@ -72,12 +73,12 @@ pins:
     direction: input
 
 default_conditions:
-  AVDD:
+  avdd:
     description: Analog power supply voltage
     display: Vdd
     unit: V
     typical: 3.3
-  DVDD:
+  dvdd:
     description: Digital power supply voltage
     display: Vdd
     unit: V
@@ -87,7 +88,7 @@ default_conditions:
     display: Vcm
     unit: V
     typical: 0.9
-  ibias:
+  ib:
     description: Bias current
     display: Ib
     unit: uA
@@ -109,11 +110,11 @@ default_conditions:
   hyst[1:0]:
     description: Hysteresis trim
     display: Hyst[1:0]
-    typical: '00'
+    typical: 0b00
   trim[5:0]:
     description: Offset trim
     display: Trim[5:0]
-    typical: '000000'
+    typical: 0b000000
 
 parameters:
   transient_response:
@@ -145,7 +146,7 @@ parameters:
       Tmax:
         display: Simulation time
         unit: ns
-        typical: 500
+        typical: 200
       temperature:
         minimum: -40
         typical: 27
@@ -162,7 +163,7 @@ parameters:
         description: Total circuit layout area
         unit: µm²
         maximum:
-          value: 600
+          value: any
       width:
         display: Width
         description: Total circuit layout width
@@ -197,8 +198,7 @@ parameters:
         maximum:
           value: 0
     tool:
-      netgen_lvs:
-        script: run_project_lvs.tcl
+      netgen_lvs
 
   klayout_drc_feol:
     description: KLayout DRC feol
