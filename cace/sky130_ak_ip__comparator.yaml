@@ -107,6 +107,10 @@ default_conditions:
     display: Temp
     unit: °C
     typical: 27
+  en:
+    description: Enable the circuit
+    display: Enable
+    typical: 1
   hyst[1:0]:
     description: Hysteresis trim
     display: Hyst[1:0]

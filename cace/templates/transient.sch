@@ -81,9 +81,9 @@ N 480 190 580 190 {
 lab=hyst[1:0]}
 N 480 210 580 210 {
 lab=trim[5:0]}
-N -140 300 -140 330 {
+N -140 290 -140 320 {
 lab=hyst[1]}
-N -140 430 -140 460 {
+N -140 420 -140 450 {
 lab=hyst[0]}
 N -400 290 -400 320 {
 lab=trim[1]}
@@ -97,6 +97,10 @@ N -400 -120 -400 -90 {
 lab=trim[4]}
 N -400 -260 -400 -230 {
 lab=trim[5]}
+N 100 420 100 450 {
+lab=en}
+N 480 170 580 170 {
+lab=en}
 C {devices/code_shown.sym} 1070 300 0 0 {name=CONTROL only_toplevel=false value="
 .control
     * Step function applied at time 100ns, save transient data
@@ -144,14 +148,14 @@ value="
 "}
 C {devices/vsource.sym} -60 -20 0 0 {name=V1 value=CACE\{dvdd\} savecurrent=false}
 C {devices/lab_wire.sym} -60 -140 0 0 {name=p1 sig_type=std_logic lab=DVDD}
-C {devices/vsource.sym} -140 360 0 0 {name=V4 value=CACE[CACE\{hyst[1]\}*CACE\{dvdd\}] savecurrent=false}
+C {devices/vsource.sym} -140 350 0 0 {name=V4 value=CACE[CACE\{hyst[1]\}*CACE\{dvdd\}] savecurrent=false}
 C {devices/lab_pin.sym} 480 190 0 0 {name=p2 sig_type=std_logic lab=hyst[1:0]}
 C {devices/lab_pin.sym} 480 210 0 0 {name=p3 sig_type=std_logic lab=trim[5:0]}
-C {devices/gnd.sym} -140 390 0 0 {name=l1 lab=GND}
-C {devices/lab_pin.sym} -140 300 0 1 {name=p4 sig_type=std_logic lab=hyst[1]}
-C {devices/vsource.sym} -140 490 0 0 {name=V5 value=CACE[CACE\{hyst[0]\}*CACE\{dvdd\}] savecurrent=false}
-C {devices/gnd.sym} -140 520 0 0 {name=l6 lab=GND}
-C {devices/lab_pin.sym} -140 430 0 1 {name=p5 sig_type=std_logic lab=hyst[0]}
+C {devices/gnd.sym} -140 380 0 0 {name=l1 lab=GND}
+C {devices/lab_pin.sym} -140 290 0 1 {name=p4 sig_type=std_logic lab=hyst[1]}
+C {devices/vsource.sym} -140 480 0 0 {name=V5 value=CACE[CACE\{hyst[0]\}*CACE\{dvdd\}] savecurrent=false}
+C {devices/gnd.sym} -140 510 0 0 {name=l6 lab=GND}
+C {devices/lab_pin.sym} -140 420 0 1 {name=p5 sig_type=std_logic lab=hyst[0]}
 C {devices/vsource.sym} -400 350 0 0 {name=V6 value=CACE[CACE\{trim[1]\}*CACE\{dvdd\}] savecurrent=false}
 C {devices/gnd.sym} -400 380 0 0 {name=l7 lab=GND}
 C {devices/lab_pin.sym} -400 290 0 1 {name=p7 sig_type=std_logic lab=trim[1]}
@@ -174,3 +178,7 @@ C {devices/vsource.sym} -400 -200 0 0 {name=V11 value=CACE[CACE\{trim[5]\}*CACE\
 C {devices/gnd.sym} -400 -170 0 0 {name=l12 lab=GND
 value=CACE[CACE\{trim[2]\}*CACE\{dvdd\}]}
 C {devices/lab_pin.sym} -400 -260 0 1 {name=p18 sig_type=std_logic lab=trim[5]}
+C {devices/vsource.sym} 100 480 0 0 {name=V12 value=CACE[CACE\{en\}*CACE\{dvdd\}] savecurrent=false}
+C {devices/gnd.sym} 100 510 0 0 {name=l13 lab=GND}
+C {devices/lab_pin.sym} 100 420 0 1 {name=p19 sig_type=std_logic lab=en}
+C {devices/lab_pin.sym} 480 170 0 0 {name=p20 sig_type=std_logic lab=en}
