@@ -1,4 +1,4 @@
-** sch_path: /home/leo/Projects/sky130_ak_ip__comparator/xschem/sky130_ak_ip__comparator.sch
+** sch_path: /home/tim/gits/chipalooza_projects_redef/dependencies/sky130_ak_ip__comparator/xschem/sky130_ak_ip__comparator.sch
 .subckt sky130_ak_ip__comparator DVDD AVDD AGND Vinp Vout Vinm en hyst[1] hyst[0] trim[5] trim[4] trim[3] trim[2] trim[1] trim[0]
 + ibias DGND
 *.PININFO Vinp:I Vinm:I AVDD:I AGND:I en:I hyst[1:0]:I trim[5:0]:I Vout:O DGND:I ibias:I DVDD:I
@@ -327,7 +327,7 @@ XR8 AGND AGND AGND sky130_fd_pr__res_high_po_2p85 L=2.85*11.2 mult=1 m=1
 
 * expanding   symbol:  level_shifter_up.sym # of pins=7
 ** sym_path: xschem/level_shifter_up.sym
-** sch_path: /home/leo/Projects/sky130_ak_ip__comparator/xschem/level_shifter_up.sch
+** sch_path: /home/tim/gits/chipalooza_projects_redef/dependencies/sky130_ak_ip__comparator/xschem/level_shifter_up.sch
 .subckt level_shifter_up VDD_HV xb_hv x_hv x_lv GND_HV VDD_LV GND_LV
 *.PININFO VDD_HV:I GND_HV:I x_lv:I x_hv:O xb_hv:O VDD_LV:I GND_LV:I
 XM65 xb_hv x_lv GND_HV GND_HV sky130_fd_pr__nfet_g5v0d10v5 L=0.5 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29'
