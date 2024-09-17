@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1713601876
+timestamp 1726592213
 << pwell >>
 rect -2503 -3844 2503 3844
 << mvpsubdiff >>
@@ -154,5 +154,6 @@ rect -2164 -3772 2164 -3766
 string FIXED_BBOX -2408 -3749 2408 3749
 string gencell sky130_fd_pr__res_high_po_2p85
 string library sky130
+string MASKHINTS_HVI -2492 -3833 2492 -3665 -2492 3664 2492 3832
 string parameters w 2.85 l 31.92 m 1 nx 7 wmin 2.850 lmin 0.50 rho 319.8 val 3.718k dummy 0 dw 0.0 term 194.82 sterm 0.0 caplen 0 guard 1 glc 1 grc 1 gtc 1 gbc 1 compatible {sky130_fd_pr__res_high_po_0p35  sky130_fd_pr__res_high_po_0p69 sky130_fd_pr__res_high_po_1p41  sky130_fd_pr__res_high_po_2p85 sky130_fd_pr__res_high_po_5p73} snake 0 full_metal 1 wmax 2.850 n_guard 0 hv_guard 1 vias 1 viagb 90 viagt 90 viagl 90 viagr 90
 << end >>
