@@ -1,4 +1,4 @@
-v {xschem version=3.1.0 file_version=1.2
+v {xschem version=3.4.5 file_version=1.2
 }
 G {}
 K {}
@@ -46,7 +46,7 @@ lab=x_hv}
 N 150 -180 170 -180 {
 lab=xb_hv}
 N 1070 -90 1070 -30 {
-lab=GND_HV}
+lab=#net1}
 N 1070 -330 1070 -150 {
 lab=xb_lv}
 N 1070 -450 1070 -390 {
@@ -58,15 +58,15 @@ lab=x_lv}
 N 1010 -120 1030 -120 {
 lab=x_lv}
 N 1070 -120 1110 -120 {
-lab=GND_HV}
+lab=#net1}
 N 1110 -120 1110 -30 {
-lab=GND_HV}
+lab=#net1}
 N 1070 -360 1110 -360 {
 lab=VDD_LV}
 N 1110 -450 1110 -360 {
 lab=VDD_LV}
 N 960 -30 1170 -30 {
-lab=GND_HV}
+lab=#net1}
 N 980 -450 1180 -450 {
 lab=VDD_LV}
 N 990 -240 1010 -240 {
@@ -88,7 +88,7 @@ lab=xb_hv}
 N 1180 -450 1310 -450 {
 lab=VDD_LV}
 N 1170 -30 1290 -30 {
-lab=GND_HV}
+lab=#net1}
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 150 -120 0 0 {name=M65
 L=0.5
 W=1
@@ -153,7 +153,6 @@ C {devices/opin.sym} 150 -180 0 1 {name=p3 lab=xb_hv}
 C {devices/lab_pin.sym} 400 -120 0 1 {name=p7 sig_type=std_logic lab=xb_lv}
 C {devices/lab_pin.sym} 1120 -250 0 1 {name=p9 sig_type=std_logic lab=xb_lv
 }
-C {devices/lab_pin.sym} 960 -30 0 0 {name=p6 sig_type=std_logic lab=GND_HV}
 C {devices/lab_pin.sym} 110 -120 0 0 {name=p5 sig_type=std_logic lab=x_lv}
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 1050 -120 0 0 {name=M1
 L=0.5
@@ -184,3 +183,5 @@ model=pfet_g5v0d10v5
 spiceprefix=X
 }
 C {devices/ipin.sym} 980 -450 0 0 {name=p8 lab=VDD_LV}
+C {devices/ipin.sym} 960 -30 0 0 {name=p4 lab=GND_LV
+}
