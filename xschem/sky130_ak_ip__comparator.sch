@@ -3779,8 +3779,8 @@ sa=0 sb=0 sd=0
 model=pfet_g5v0d10v5
 spiceprefix=X
 }
-C {devices/ammeter.sym} 3200 1550 0 0 {name=Vmeas_var_tailp}
-C {devices/ammeter.sym} 3480 1550 0 0 {name=Vmeas_var_tailn}
+C {devices/ammeter.sym} 3200 1550 0 0 {name=Vmeas_var_tailp lvs_ignore=short}
+C {devices/ammeter.sym} 3480 1550 0 0 {name=Vmeas_var_tailn lvs_ignore=short}
 C {devices/lab_pin.sym} 2000 1410 2 1 {name=p107 sig_type=std_logic lab=bias_p}
 C {sky130_fd_pr/nfet_g5v0d10v5.sym} 120 580 0 1 {name=M77
 L=4
